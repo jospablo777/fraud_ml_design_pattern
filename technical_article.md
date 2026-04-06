@@ -5,7 +5,7 @@
 
 This article extends the Nerdearla Chile 2026 talk "Fraud prevention, machine learning, and design patterns: keep your analysts in the loop." The main claim is that fraud prevention should be treated as an **ML-enabled software-architecture problem**, not only as a classification problem. In real operations, rules, machine learning, operational policy, analyst work, and platform engineering all shape outcomes. Looking only at model performance hides the socio-technical nature of the system.
 
-The article develops a design-pattern proposition for **ML-enabled Human-in-the-Loop (HIL) Triage**. The proposed pattern uses rules for explicit cases, machine learning for scoring and prioritization, policy for routing and action selection, and expert analysts for ambiguous cases and structured feedback. The discussion connects this architecture to the literature on software architecture for ML systems, human-in-the-loop design, design patterns for AI-based systems, learning to defer, alert prioritization, reliable machine learning, and platform engineering.
+The article develops a design-pattern proposition for **ML-enabled Human-in-the-Loop (HIL) Triage**. The proposed pattern uses rules for explicit cases, machine learning for scoring and prioritization, policy for routing and action selection, and expert analysts for ambiguous cases and structured feedback. The discussion connects this architecture to the literature on software architecture for ML systems, human-in-the-loop design, design patterns for AI-based systems, learning to defer, alert prioritization, reliable machine learning, and platform engineering. More broadly, the article situates the proposal within the wider human-in-the-loop machine-learning literature, where humans may participate as reviewers, collaborators, or teachers rather than only as post hoc annotators (Mosqueira-Rey et al., 2023).
 
 ## 1. Introduction
 
@@ -13,7 +13,7 @@ The conference talk that accompanies this repository was intentionally concise. 
 
 The central thesis is straightforward: robust fraud-prevention systems are hybrid systems. They rarely succeed as purely manual workflows, because the volume of traffic and the speed of attack make full manual review infeasible. They also rarely succeed as purely automatic systems, because high-stakes decisions must account for ambiguity, changing attacker behavior, incomplete labels, asymmetric costs, and governance constraints. The most resilient architecture combines deterministic controls, statistical scoring, decision policy, and expert human judgment.
 
-That claim is not merely organizational. It is architectural. Production machine-learning systems already require supporting software, data pipelines, monitoring, and deployment structures (Sculley et al., 2015; Lewis, Ozkaya, & Xu, 2021; Nazir, Bucaioni, & Pelliccione, 2024). In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not the model in isolation; it is the full socio-technical system that converts signals into actions.
+That claim is not merely organizational. It is architectural. Production machine-learning systems already require supporting software, data pipelines, monitoring, deployment structures, and cross-functional engineering practices (Sculley et al., 2015; Amershi et al., 2019; Lewis, Ozkaya, & Xu, 2021; Nazir, Bucaioni, & Pelliccione, 2024). In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not the model in isolation; it is the full socio-technical system that converts signals into actions.
 
 ![Fig. 1. A conceptual overview of the pattern: effective fraud systems are built from the interaction of rules, machine learning, and expert analysts rather than any one component in isolation.](img/fraud_system_three_pillars.png)
 
@@ -23,7 +23,7 @@ Figure 1 captures the argument in its simplest form. Fraud systems benefit from 
 
 ## 2. Why fraud prevention becomes an architecture problem
 
-Fraud prevention is not a stable prediction problem in which one optimizes a model once and then serves it indefinitely. It is adversarial, operational, and intervention-dependent. Those properties make architecture central.
+Fraud prevention is not a stable prediction problem in which one optimizes a model once and then serves it indefinitely. It is adversarial, operational, and intervention-dependent. Those properties make architecture central. Reviews of fraud-detection practice also show why hybrid stacks persist: supervised models, anomaly detectors, rules, and investigation workflows are often combined because no single technique fully handles novelty, delayed labels, and operational constraints (Carcillo et al., 2021; Hernandez Aros et al., 2024).
 
 First, attackers adapt. A rule that works today may become useless once fraudsters learn the boundary. A model that looks strong on historical data may deteriorate under new attack campaigns, new geographies, or new channels. This is one reason fraud research has increasingly emphasized adaptive systems, anomaly detection, and the combination of supervised and unsupervised approaches (Bolton & Hand, 2002; Hilal, Gadsden, & Yawney, 2022; Lunghi et al., 2023).
 
@@ -59,7 +59,7 @@ The architecture discussed here is not a one-off diagram. It is proposed as a re
 
 Pattern literature for AI and ML systems is still maturing. Washizaki et al. (2020) documented recurring architecture and design patterns for machine-learning systems. Heiland, Hauser, and Bogner (2023) expanded the pattern repository for AI-based systems. Järvenpää et al. (2024) focused on reusable architectural tactics for ML-enabled systems. Cruz et al. (2023) reinforced the importance of architecture rationale and evaluation. Taken together, these works suggest that teams need more explicit and reusable architecture knowledge for ML-enabled systems.
 
-That is exactly the motivation for formalizing an ML-enabled HIL triage pattern for fraud.
+That is exactly the motivation for formalizing an ML-enabled HIL triage pattern for fraud. The broader HITL-ML literature strengthens that move. Mosqueira-Rey et al. (2023) describe human-in-the-loop machine learning as a family of approaches, including active learning, interactive machine learning, and machine teaching, that differ in how human expertise enters and shapes the loop. Fraud operations are closer to that richer view than to a narrow image of humans appearing only after the model has already made a decision.
 
 ![Fig. 12. Pattern framing for ML-enabled human-in-the-loop fraud triage: context, forces, reusable solution, consequences, and related lineage. Synthesized from Lakshmanan, Robinson, & Munn (2021), Heiland et al. (2023), Cruz et al. (2023), and Järvenpää et al. (2024).](img/pattern_context_forces_consequences.png)
 
@@ -99,13 +99,13 @@ A recurring weakness in ML system design is to treat human review as a vague fal
 
 **Fig. 6.** Bidirectional collaboration between analysts and ML: models provide prioritization, speed, and focus, while analysts contribute feedback, calibration, contextual judgment, and learning.
 
-Figure 6 frames the relationship as two-way collaboration. The model accelerates prioritization and reduces search cost. Analysts supply interpretation, exception handling, escalation judgment, and feedback. That feedback is not just an annotation activity for offline training. It is part of the production operation.
+Figure 6 frames the relationship as two-way collaboration. The model accelerates prioritization and reduces search cost. Analysts supply interpretation, exception handling, escalation judgment, and feedback. That feedback is not just an annotation activity for offline training. It is part of the production operation. Seen through the HITL literature, analysts are not merely annotators. They may act as reviewers, collaborators, or teachers depending on where intervention happens and how their expertise is captured (Mosqueira-Rey et al., 2023). Related work on anomaly reasoning and management reaches a similar conclusion from the tooling side: the goal is not detection alone, but support for explanation, action, and iterative investigation in production (Ding et al., 2023).
 
 ![Fig. 7. Closed-loop HIL triage with explicit feedback paths: analyst outcomes feed rule maintenance and model improvement, turning review into a learning mechanism rather than an operational dead end.](img/hil_triage_feedback_architecture.png)
 
 **Fig. 7.** Closed-loop HIL triage with explicit feedback paths: analyst outcomes feed rule maintenance and model improvement, turning review into a learning mechanism rather than an operational dead end.
 
-Figure 7 makes that point concrete. Analyst outcomes should feed both rule maintenance and model improvement. That means review results must be structured enough to support relabeling, rule creation, threshold changes, and post-incident analysis. Kadam (2024) is especially relevant here because it treats human-in-the-loop fraud feedback not only as ad hoc review, but as feedback that can be propagated and reused.
+Figure 7 makes that point concrete. Analyst outcomes should feed both rule maintenance and model improvement. That means review results must be structured enough to support relabeling, rule creation, threshold changes, and post-incident analysis. Kadam (2024) is especially relevant here because it treats human-in-the-loop fraud feedback not only as ad hoc review, but as feedback that can be propagated and reused. This is especially important when the system encounters weakly characterized or unknown attacks. Expert-in-the-loop approaches to open-set recognition suggest that human review becomes most valuable at the boundary where the model faces novelty and uncertainty rather than well understood cases (Yuan et al., 2026).
 
 Figure 8 presents the same idea in a compact operational form.
 
@@ -121,7 +121,7 @@ Operationalization also requires a concrete analyst workbench.
 
 **Fig. 9.** Analyst workbench for HIL fraud triage: ranked cases, risk bands, reason codes, SLA timers, and structured feedback turn the architecture into an operational review system. Synthesized from Jalalvand et al. (2024), Ghadermazi et al. (2024), and Alves et al. (2025).
 
-Figure 9 is intentionally concrete. Alert prioritization research repeatedly highlights the importance of workload, context, skill, assignment, and review efficiency (Jalalvand et al., 2024; Ghadermazi, Shah, & Jajodia, 2024). Learning-to-defer research adds the idea that expert availability and heterogeneity matter for system performance (Alves et al., 2025). A practical analyst interface should therefore expose ranked cases, top signals, SLA pressure, action controls, and structured feedback fields. Without those elements, the architecture remains abstract and hard to operate.
+Figure 9 is intentionally concrete. Alert prioritization research repeatedly highlights the importance of workload, context, skill, assignment, and review efficiency (Jalalvand et al., 2024; Ghadermazi, Shah, & Jajodia, 2024). Learning-to-defer research adds the idea that expert availability and heterogeneity matter for system performance (Alves et al., 2025). A practical analyst interface should therefore expose ranked cases, top signals, SLA pressure, action controls, and structured feedback fields. Without those elements, the architecture remains abstract and hard to operate. This is also consistent with human-AI interaction guidance, which emphasizes communicating uncertainty, supporting efficient oversight, and making intervention understandable at the point of use (Amershi et al., 2019). Industry case studies point in the same direction. Uber's Project RADAR used humans in the loop to validate and operationalize candidate fraud rules rather than treating analysts as a purely manual backup layer (Zelvenskiy et al., 2022).
 
 ## 7. Evaluation must fit the socio-technical system
 
@@ -145,7 +145,7 @@ The pattern does not end at runtime routing. It has an operational lifecycle. Fe
 
 **Fig. 11.** MLOps feedback lifecycle for ML-enabled HIL fraud systems: runtime monitoring and analyst feedback support data curation, model improvement, and policy revision. Adapted from Lewis, Ozkaya, & Xu (2021), extended with platform-engineering concepts from Tan, Padmanabhan, & Mallya (2026), and specialized for fraud feedback loops using Kadam (2024).
 
-Figure 11 is where architecture meets MLOps and platform engineering. The upper part of the diagram represents the offline build loop: data capture, feature generation, model training, and evaluation. The lower part represents online operation: deployment, runtime monitoring, analyst review, and structured feedback capture. The side loops show why feedback should not be collapsed into a single retraining arrow. Some feedback should improve the dataset or features; some should drive model improvement; some should revise rules, thresholds, or routing policy.
+Figure 11 is where architecture meets MLOps and platform engineering. The upper part of the diagram represents the offline build loop: data capture, feature generation, model training, and evaluation. The lower part represents online operation: deployment, runtime monitoring, analyst review, and structured feedback capture. The side loops show why feedback should not be collapsed into a single retraining arrow. Some feedback should improve the dataset or features; some should drive model improvement; some should revise rules, thresholds, or routing policy. Data and feature plumbing are part of that same architectural story. Konieczny (2025) documents recurring data-engineering patterns for dependable ingestion, transformation, lineage, and pipeline quality; those concerns map directly onto the data-capture and feature-generation stages of the lifecycle. Mosqueira-Rey et al. (2023) also help explain why the diagram contains more than one return path: in HITL systems, human intervention may serve different roles, from annotation to interactive steering to teaching, so collapsing all feedback into retraining hides important design distinctions.
 
 This is consistent with the literature. Lewis, Ozkaya, and Xu (2021) emphasize monitorability, maintenance, and evolution. Lewis, Bellomo, and Ozkaya (2021) discuss mismatch between assumptions made by different roles and system parts. Tan, Padmanabhan, and Mallya (2026) frame platform support as an important way to reduce accidental complexity and create repeatable paths for deployment, observability, and governance. Kadam (2024) brings the fraud-specific feedback loop into that broader lifecycle.
 
@@ -161,7 +161,7 @@ Several anti-patterns follow naturally from this discussion. One is letting the 
 
 ## 10. Why this matters for a new, but important field
 
-A recurring idea across the literature used in this repository is that ML-enabled software architecture is still a relatively young field. The community already has important concepts such as hidden technical debt, architecture mismatch, human-in-the-loop design patterns, monitorability, architecture evaluation, and internal ML platforms. Yet reusable design knowledge is still being consolidated.
+A recurring idea across the literature used in this repository is that ML-enabled software architecture is still a relatively young field. Surveys and position papers have made that point explicitly (Muccini & Vaidhyanathan, 2021; Nazir, Bucaioni, & Pelliccione, 2024). The community already has important concepts such as hidden technical debt, architecture mismatch, human-in-the-loop design patterns, monitorability, architecture evaluation, and internal ML platforms. At the same time, the wider HITL-ML literature is making clear that human participation is itself a design space rather than a generic fallback (Mosqueira-Rey et al., 2023). Yet reusable design knowledge is still being consolidated.
 
 Fraud prevention is a useful place to push that field forward because the stakes make the socio-technical nature of ML especially visible. In lower-stakes domains, teams can sometimes hide the surrounding architecture behind a model score or a dashboard. In fraud operations, the consequences of doing so become obvious very quickly. Decisions affect money, customer experience, investigation load, escalation paths, and organizational risk. That makes fraud a particularly revealing domain for discussing ML-enabled architecture as architecture.
 
@@ -173,7 +173,7 @@ Several open questions remain, and they are worth stating clearly.
 
 One open question concerns policy optimization. If scores, analyst capacity, SLA pressure, and business value all matter, what is the best way to define and adapt the routing policy over time?
 
-Another concerns feedback quality. Which analyst signals are most predictive of future system improvement, and how should disagreement between analysts be modeled? Learning-to-defer research suggests that expert heterogeneity matters; fraud operations likely add role-specific and queue-specific effects that deserve further study.
+Another concerns feedback quality. Which analyst signals are most predictive of future system improvement, and how should disagreement between analysts be modeled? Learning-to-defer research suggests that expert heterogeneity matters; fraud operations likely add role-specific and queue-specific effects that deserve further study. Expert-in-the-loop work on unknown attack detection via open-set recognition points to one promising direction, but similar ideas remain underexplored in fraud operations (Yuan et al., 2026).
 
 A third concerns architecture evaluation. Scenario-based architecture evaluation has been discussed for ML-enabled systems, but there is still room for more domain-specific methods that explicitly test queue saturation, feature outages, delayed labels, and adversarial shifts.
 
@@ -189,6 +189,8 @@ That is the architecture developed in the talk and extended in this repository.
 
 ## References
 
+Amershi, S., Begel, A., Bird, C., DeLine, R., Gall, H., Kamar, E., Nagappan, N., & Nushi, B. (2019). *Software engineering for machine learning: A case study*. In **2019 IEEE/ACM 41st International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)** (pp. 291-300). IEEE. https://doi.org/10.1109/ICSE-SEIP.2019.00042
+
 Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S. T., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., & Horvitz, E. (2019). *Guidelines for human-AI interaction*. In **Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems**. Association for Computing Machinery. https://doi.org/10.1145/3290605.3300233
 
 Alves, J. V., Leitão, D., Jesus, S., Sampaio, M. O. P., Liébana, J., Saleiro, P., Figueiredo, M. A. T., & Bizarro, P. (2025). *A benchmarking framework and dataset for learning to defer in human-AI decision-making*. **Scientific Data, 12**, 506. https://doi.org/10.1038/s41597-025-04664-y
@@ -197,13 +199,19 @@ Andersen, J., & Maalej, W. (2024). *Design Patterns for Machine Learning-Based S
 
 Bolton, R. J., & Hand, D. J. (2002). *Statistical fraud detection: A review*. **Statistical Science, 17**(3), 235-255. https://doi.org/10.1214/ss/1042727940
 
+Carcillo, F., Le Borgne, Y.-A., Caelen, O., Kessaci, Y., Oblé, F., & Bontempi, G. (2021). *Combining unsupervised and supervised learning in credit card fraud detection*. **Information Sciences, 557**, 317-331. https://doi.org/10.1016/j.ins.2019.05.042
+
 Chen, C., Murphy, N. R., Parisa, K., Sculley, D., & Underwood, T. (2022). *Reliable machine learning: Applying SRE principles to ML in production*. O’Reilly Media.
 
 Cruz, P., Ulloa, G., San Martin, D., & Veloz, A. (2023). *Software Architecture Evaluation of a Machine Learning Enabled System: A Case Study*. In **2023 42nd IEEE International Conference of the Chilean Computer Science Society (SCCC)**. IEEE. https://doi.org/10.1109/SCCC59417.2023.10315755
 
+Ding, X., Seleznev, N., Kumar, S., Bruss, C. B., & Akoglu, L. (2023). *From detection to action: A human-in-the-loop toolkit for anomaly reasoning and management*. In **Proceedings of the Fourth ACM International Conference on AI in Finance** (pp. 279-287). Association for Computing Machinery. https://doi.org/10.1145/3604237.3626872
+
 Ghadermazi, J., Shah, A., & Jajodia, S. (2024). *A machine learning and optimization framework for efficient alert management in a cybersecurity operations center*. **Digital Threats: Research and Practice, 5**(2), Article 19. https://doi.org/10.1145/3644393
 
 Heiland, L., Hauser, M., & Bogner, J. (2023). *Design Patterns for AI-based Systems: A multivocal literature review and pattern repository*. In **2023 IEEE/ACM 2nd International Conference on AI Engineering - Software Engineering for AI (CAIN)**. IEEE. https://doi.org/10.1109/CAIN58948.2023.00034
+
+Hernandez Aros, L., Bustamante Molano, L. X., Gutierrez-Portela, F., Moreno Hernandez, J. J., & Rodríguez Barrero, M. S. (2024). *Financial fraud detection through the application of machine learning techniques: A literature review*. **Humanities and Social Sciences Communications, 11**(1), 1-22. https://doi.org/10.1057/s41599-024-03606-0
 
 Hilal, W., Gadsden, S. A., & Yawney, J. (2022). *Financial fraud: A review of anomaly detection techniques and recent advances*. **Expert Systems with Applications, 193**, 116429. https://doi.org/10.1016/j.eswa.2021.116429
 
@@ -213,15 +221,19 @@ Jalalvand, F., Chhetri, M. B., Nepal, S., & Paris, C. (2024). *Alert prioritisat
 
 Kadam, P. (2024). *Enhancing financial fraud detection with human-in-the-loop feedback and feedback propagation*. In **2024 International Conference on Machine Learning and Applications (ICMLA)** (pp. 1198-1203). IEEE. https://doi.org/10.1109/ICMLA61862.2024.00185
 
-Kästner, C. (2025). *Machine learning in production: From models to products*. MIT Press.
+Kästner, C. (2025). *Machine learning in production: From models to products*. MIT Press. https://mlip-cmu.github.io/book/
 
-Lakshmanan, V., Robinson, S., & Munn, M. (2021). *Machine learning design patterns: Solutions to common challenges in data preparation, model building, and MLOps*. O’Reilly Media.
+Konieczny, B. (2025). *Data engineering design patterns: Recipes for solving the most common data engineering problems*. O’Reilly Media.
+
+Lakshmanan, V., Robinson, S., & Munn, M. (2020). *Machine learning design patterns*. O’Reilly Media.
 
 Lewis, G. A., Bellomo, S., & Ozkaya, I. (2021). *Characterizing and detecting mismatch in machine-learning-enabled systems*. In **2021 IEEE/ACM 1st Workshop on AI Engineering - Software Engineering for AI (WAIN)** (pp. 133-140). IEEE. https://doi.org/10.1109/WAIN52551.2021.00028
 
 Lewis, G. A., Ozkaya, I., & Xu, X. (2021). *Software architecture challenges for ML systems*. In **2021 IEEE International Conference on Software Maintenance and Evolution (ICSME)** (pp. 634-638). IEEE. https://doi.org/10.1109/ICSME52107.2021.00071
 
 Lunghi, D., Simitsis, A., Caelen, O., & Bontempi, G. (2023). *Adversarial learning in real-world fraud detection: Challenges and perspectives*. In **Proceedings of the Second ACM Data Economy Workshop** (pp. 27-33). Association for Computing Machinery. https://doi.org/10.1145/3600046.3600051
+
+Mosqueira-Rey, E., Hernández-Pereira, E., Alonso-Ríos, D., Bobes-Bascarán, J., & Fernández-Leal, Á. (2023). *Human-in-the-loop machine learning: A state of the art*. **Artificial Intelligence Review, 56**, 3005-3054. https://doi.org/10.1007/s10462-022-10246-w
 
 Muccini, H., & Vaidhyanathan, K. (2021). *Software architecture for ML-based systems: What exists and what lies ahead*. In **2021 IEEE/ACM 1st Workshop on AI Engineering - Software Engineering for AI (WAIN)** (pp. 121-128). IEEE. https://doi.org/10.1109/WAIN52551.2021.00026
 
@@ -232,3 +244,7 @@ Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudh
 Tan, B. T. W. H., Padmanabhan, S., & Mallya, V. (2026). *Machine learning platform engineering: Build an internal developer platform for ML and AI systems*. Manning.
 
 Washizaki, H., Uchida, H., Khomh, F., & Guéhéneuc, Y.-G. (2020). *Machine learning architecture and design patterns*. **IEEE Software, 37**(4), 76-84. https://doi.org/10.1109/MS.2019.2961960
+
+Yuan, X., Yu, P., Liu, S., Sun, Z., Zhang, Y., & Xu, J. (2026). *An expert-in-the-loop framework for unknown attack detection via open-set recognition*. **Journal of Computer Security**. Advance online publication. https://doi.org/10.1177/0926227X251414058
+
+Zelvenskiy, S., Harisinghani, G., Yu, T., Ng, E., & Wei, R. (2022). *Project RADAR: Intelligent early fraud detection system with humans in the loop*. Uber Blog. https://www.uber.com/en-CR/blog/project-radar-intelligent-early-fraud-detection/
