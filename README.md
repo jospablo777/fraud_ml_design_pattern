@@ -102,7 +102,7 @@ The analyst workbench is where this architecture becomes concrete. Ranking, reas
 
 **Fig. 9.** Analyst workbench for HIL fraud triage: ranked cases, risk bands, reason codes, SLA timers, and structured feedback turn the architecture into an operational review system. Synthesized from Jalalvand et al. (2024), Ghadermazi et al. (2024), and Alves et al. (2025).
 
-This figure makes an important point for practitioners: queue design and analyst interaction design are architecture concerns. The ranking policy, the explanation surface, the way SLA pressure is shown, and the structure of decision logging all affect how the ML-enabled system behaves in practice.
+This figure makes an important point for practitioners: queue design and analyst interaction design are architecture concerns. The ranking policy, the explanation surface, the way SLA pressure is shown, and the structure of decision logging all affect how the ML-enabled system behaves in practice. The workbench should also respect broader human-AI interaction guidance around explanation, control, override, and feedback capture (Amershi et al., 2019).
 
 ## Evaluate the whole system, not only the model
 
@@ -136,7 +136,7 @@ Figure 12 makes the design-pattern claim explicit. The proposed architecture res
 
 ## Why this matters for ML-enabled software architecture
 
-The field of ML-enabled software architecture is still consolidating. The literature already documents hidden technical debt, architecture mismatch, monitorability, co-architecting, co-versioning, architecture evaluation, and pattern catalogues for AI systems. Yet many teams still approach production fraud detection either as a pure data-science problem or as a pure workflow problem. This repository argues that the most useful unit of design is the hybrid system.
+The field of ML-enabled software architecture is still consolidating. The literature already documents hidden technical debt, architecture mismatch, monitorability, co-architecting, co-versioning, architecture evaluation, and broader architecting guidance for ML-enabled systems (Sculley et al., 2015; Lewis, Bellomo, & Ozkaya, 2021; Lewis, Ozkaya, & Xu, 2021; Nazir, Bucaioni, & Pelliccione, 2024). Yet many teams still approach production fraud detection either as a pure data-science problem or as a pure workflow problem. This repository argues that the most useful unit of design is the hybrid system.
 
 That perspective is valuable beyond fraud. Any high-stakes setting where predictions must be converted into actions under uncertainty can benefit from the same separation between score and policy, the same concern for structured human feedback, and the same attention to operational queues, platform support, and architecture-level trade-offs.
 
