@@ -157,7 +157,19 @@ The proposed pattern improves several things at once. It uses analyst attention 
 
 Those benefits come with costs. The architecture has more moving parts than a pure scoring service. Queue behavior must be monitored. Decision logic must be versioned and auditable. Human feedback must be structured and governed. Different teams, such as software engineers, data scientists, risk operators, and analysts, must coordinate around shared system behavior. This is precisely why the design-pattern framing is useful: it describes not only the solution, but also the costs of adopting it.
 
-Several anti-patterns follow naturally from this discussion. One is letting the score become policy, which hides governance decisions inside the model. Another is treating analysts as an unstructured exception bucket rather than as a designed workflow. A third is building the data and model side while leaving operations and interface design underspecified. A fourth is ignoring monitorability and later discovering that the team cannot explain what changed when performance shifts.
+### Anti-patterns worth naming
+
+Several anti-patterns follow naturally from this discussion.
+
+**Letting the score become policy.** When a raw model score directly triggers business action without an explicit policy layer, governance becomes opaque. Threshold changes become risky because no one can tell where inference ends and decision begins. The remedy is the separation described in Section 5: score estimates risk; policy decides what to do about it.
+
+**Treating analysts as unstructured exception handling.** If reviewers only leave free-text notes and the system captures no structured outcome data, the feedback loop collapses. The review lane generates operational cost but no reusable signal. Structured fields for outcome, reason code, confidence, and suggested action are what turn review into learning.
+
+**Building the model while leaving operations underspecified.** A common pattern is to invest heavily in data science while treating the analyst interface, queue design, and escalation logic as afterthoughts. The result is a high-performing model inside a system that cannot operate it effectively.
+
+**Ignoring monitorability until something breaks.** Lewis, Ozkaya, and Xu (2021) report that many teams handle monitoring manually or not at all. In fraud systems, degradation often appears first as queue overload, rising analyst disagreement, or calibration drift rather than a dramatic crash. By the time someone notices, the damage may already be substantial.
+
+**Glue code and pipeline jungles.** Washizaki et al. (2020) identify these as recurring ML anti-patterns. Fraud systems are especially vulnerable because they accumulate feature joins, rule engines, risk services, case queues, and alerting layers under delivery pressure. Without platform discipline, these components become fragile and hard to change.
 
 ## 10. Why this matters for a new, but important field
 
@@ -178,6 +190,8 @@ Another concerns feedback quality. Which analyst signals are most predictive of 
 A third concerns architecture evaluation. Scenario-based architecture evaluation has been discussed for ML-enabled systems, but there is still room for more domain-specific methods that explicitly test queue saturation, feature outages, delayed labels, and adversarial shifts.
 
 A fourth concerns platform productization. Many organizations still build fraud systems as collections of scripts, dashboards, and services with weak shared abstractions. Internal platform engineering for fraud and risk remains an important opportunity.
+
+A fifth concerns the role of large language models and generative AI in the analyst workflow. LLMs may change how analysts interact with the system by providing case summarization, natural-language reason codes, automated triage explanations, or conversational investigation support. The open question is not whether LLMs will appear in fraud operations, but how they should be integrated without undermining the structured feedback loops, auditability, and governance that the pattern depends on.
 
 ## 12. Conclusion
 
