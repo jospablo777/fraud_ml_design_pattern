@@ -1,0 +1,279 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alves et~al.(2025)Alves, Leit\~{a}o, Jesus, Sampaio, Li\'{e}bana,
+  Saleiro, Figueiredo, and Bizarro]{Alves2025}
+J.~a.~V. Alves, D.~Leit\~{a}o, S.~Jesus, M.~O.~P. Sampaio, J.~Li\'{e}bana,
+  P.~Saleiro, M.~A.~T. Figueiredo, and P.~Bizarro.
+\newblock A benchmarking framework and dataset for learning to defer in
+  human-{AI} decision-making.
+\newblock \emph{Scientific Data}, 12:\penalty0 506, 2025.
+\newblock \doi{10.1038/s41597-025-04664-y}.
+
+\bibitem[Amershi et~al.(2019{\natexlab{a}})Amershi, Begel, Bird, DeLine, Gall,
+  Kamar, Nagappan, and Nushi]{Amershi2019SE}
+S.~Amershi, A.~Begel, C.~Bird, R.~DeLine, H.~Gall, E.~Kamar, N.~Nagappan, and
+  B.~Nushi.
+\newblock Software engineering for machine learning: A case study.
+\newblock In \emph{2019 IEEE/ACM 41st International Conference on Software
+  Engineering: Software Engineering in Practice (ICSE-SEIP)}, pages 291--300.
+  IEEE, 2019{\natexlab{a}}.
+\newblock \doi{10.1109/ICSE-SEIP.2019.00042}.
+
+\bibitem[Amershi et~al.(2019{\natexlab{b}})Amershi, Weld, Vorvoreanu, Fourney,
+  Nushi, Collisson, Suh, Iqbal, Bennett, Inkpen, Teevan, Kikin-Gil, and
+  Horvitz]{Amershi2019HAI}
+S.~Amershi, D.~Weld, M.~Vorvoreanu, A.~Fourney, B.~Nushi, P.~Collisson, J.~Suh,
+  S.~T. Iqbal, P.~N. Bennett, K.~Inkpen, J.~Teevan, R.~Kikin-Gil, and
+  E.~Horvitz.
+\newblock Guidelines for human-{AI} interaction.
+\newblock In \emph{Proceedings of the 2019 CHI Conference on Human Factors in
+  Computing Systems}. Association for Computing Machinery, 2019{\natexlab{b}}.
+\newblock \doi{10.1145/3290605.3300233}.
+
+\bibitem[Andersen and Maalej(2024)]{Andersen2024}
+J.~Andersen and W.~Maalej.
+\newblock Design patterns for machine learning-based systems with humans in the
+  loop.
+\newblock \emph{IEEE Software}, 41\penalty0 (4):\penalty0 151--159, 2024.
+\newblock \doi{10.1109/MS.2023.3340256}.
+
+\bibitem[Bolton and Hand(2002)]{Bolton2002}
+R.~J. Bolton and D.~J. Hand.
+\newblock Statistical fraud detection: A review.
+\newblock \emph{Statistical Science}, 17\penalty0 (3):\penalty0 235--255, 2002.
+\newblock \doi{10.1214/ss/1042727940}.
+
+\bibitem[Carcillo et~al.(2021)Carcillo, {Le Borgne}, Caelen, Kessaci, Obl\'{e},
+  and Bontempi]{Carcillo2021}
+F.~Carcillo, Y.-A. {Le Borgne}, O.~Caelen, Y.~Kessaci, F.~Obl\'{e}, and
+  G.~Bontempi.
+\newblock Combining unsupervised and supervised learning in credit card fraud
+  detection.
+\newblock \emph{Information Sciences}, 557:\penalty0 317--331, 2021.
+\newblock \doi{10.1016/j.ins.2019.05.042}.
+
+\bibitem[Chen et~al.(2022)Chen, Murphy, Parisa, Sculley, and
+  Underwood]{Chen2022}
+C.~Chen, N.~R. Murphy, K.~Parisa, D.~Sculley, and T.~Underwood.
+\newblock \emph{Reliable Machine Learning: Applying {SRE} Principles to {ML} in
+  Production}.
+\newblock O'Reilly Media, 2022.
+
+\bibitem[Cruz et~al.(2023)Cruz, Ulloa, San~Martin, and Veloz]{Cruz2023}
+P.~Cruz, G.~Ulloa, D.~San~Martin, and A.~Veloz.
+\newblock Software architecture evaluation of a machine learning enabled
+  system: A case study.
+\newblock In \emph{2023 42nd IEEE International Conference of the Chilean
+  Computer Science Society (SCCC)}. IEEE, 2023.
+\newblock \doi{10.1109/SCCC59417.2023.10315755}.
+
+\bibitem[Ding et~al.(2023)Ding, Seleznev, Kumar, Bruss, and Akoglu]{Ding2023}
+X.~Ding, N.~Seleznev, S.~Kumar, C.~B. Bruss, and L.~Akoglu.
+\newblock From detection to action: A human-in-the-loop toolkit for anomaly
+  reasoning and management.
+\newblock In \emph{Proceedings of the Fourth ACM International Conference on AI
+  in Finance}, pages 279--287. Association for Computing Machinery, 2023.
+\newblock \doi{10.1145/3604237.3626872}.
+
+\bibitem[Dobbe and Wolters(2024)]{Dobbe2024}
+R.~Dobbe and A.~Wolters.
+\newblock Toward sociotechnical {AI}: Mapping vulnerabilities for machine
+  learning in context.
+\newblock \emph{Minds and Machines}, 34\penalty0 (2):\penalty0 Article 12,
+  2024.
+\newblock \doi{10.1007/s11023-024-09668-y}.
+
+\bibitem[Fazelpour(2025)]{Fazelpour2025}
+S.~Fazelpour.
+\newblock Disciplining deliberation: A socio-technical perspective on machine
+  learning trade-offs.
+\newblock \emph{The British Journal for the Philosophy of Science}, 2025.
+\newblock \doi{10.1086/734552}.
+\newblock Advance online publication.
+
+\bibitem[Ghadermazi et~al.(2024)Ghadermazi, Shah, and Jajodia]{Ghadermazi2024}
+J.~Ghadermazi, A.~Shah, and S.~Jajodia.
+\newblock A machine learning and optimization framework for efficient alert
+  management in a cybersecurity operations center.
+\newblock \emph{Digital Threats: Research and Practice}, 5\penalty0
+  (2):\penalty0 Article 19, 2024.
+\newblock \doi{10.1145/3644393}.
+
+\bibitem[Heiland et~al.(2023)Heiland, Hauser, and Bogner]{Heiland2023}
+L.~Heiland, M.~Hauser, and J.~Bogner.
+\newblock Design patterns for {AI}-based systems: A multivocal literature
+  review and pattern repository.
+\newblock In \emph{2023 IEEE/ACM 2nd International Conference on AI
+  Engineering---Software Engineering for AI (CAIN)}. IEEE, 2023.
+\newblock \doi{10.1109/CAIN58948.2023.00034}.
+
+\bibitem[Hernandez~Aros et~al.(2024)Hernandez~Aros, Bustamante~Molano,
+  Gutierrez-Portela, Moreno~Hernandez, and
+  Rodr\'{i}guez~Barrero]{HernandezAros2024}
+L.~Hernandez~Aros, L.~X. Bustamante~Molano, F.~Gutierrez-Portela, J.~J.
+  Moreno~Hernandez, and M.~S. Rodr\'{i}guez~Barrero.
+\newblock Financial fraud detection through the application of machine learning
+  techniques: A literature review.
+\newblock \emph{Humanities and Social Sciences Communications}, 11\penalty0
+  (1):\penalty0 1--22, 2024.
+\newblock \doi{10.1057/s41599-024-03606-0}.
+
+\bibitem[Jalalvand et~al.(2024)Jalalvand, Chhetri, Nepal, and
+  Paris]{Jalalvand2024}
+F.~Jalalvand, M.~B. Chhetri, S.~Nepal, and C.~Paris.
+\newblock Alert prioritisation in security operations centres: A systematic
+  survey on criteria and methods.
+\newblock \emph{ACM Computing Surveys}, 57\penalty0 (2):\penalty0 Article 42,
+  2024.
+\newblock \doi{10.1145/3695462}.
+
+\bibitem[J\"{a}rvenp\"{a}\"{a} et~al.(2024)J\"{a}rvenp\"{a}\"{a}, Lago, Bogner,
+  Lewis, Muccini, and Ozkaya]{Jarvenpaa2024}
+H.~J\"{a}rvenp\"{a}\"{a}, P.~Lago, J.~Bogner, G.~A. Lewis, H.~Muccini, and
+  I.~Ozkaya.
+\newblock A synthesis of green architectural tactics for {ML}-enabled systems.
+\newblock In \emph{Proceedings of the 46th International Conference on Software
+  Engineering: Software Engineering in Society (ICSE-SEIS '24)}, pages
+  130--141. Association for Computing Machinery, 2024.
+\newblock \doi{10.1145/3639475.3640111}.
+
+\bibitem[Kadam(2024)]{Kadam2024}
+P.~Kadam.
+\newblock Enhancing financial fraud detection with human-in-the-loop feedback
+  and feedback propagation.
+\newblock In \emph{2024 International Conference on Machine Learning and
+  Applications (ICMLA)}, pages 1198--1203. IEEE, 2024.
+\newblock \doi{10.1109/ICMLA61862.2024.00185}.
+
+\bibitem[K\"{a}stner(2025)]{Kaestner2025}
+C.~K\"{a}stner.
+\newblock \emph{Machine Learning in Production: From Models to Products}.
+\newblock MIT Press, 2025.
+\newblock URL \url{https://mlip-cmu.github.io/book/}.
+
+\bibitem[Konieczny(2025)]{Konieczny2025}
+B.~Konieczny.
+\newblock \emph{Data Engineering Design Patterns: Recipes for Solving the Most
+  Common Data Engineering Problems}.
+\newblock O'Reilly Media, 2025.
+
+\bibitem[Lakshmanan et~al.(2020)Lakshmanan, Robinson, and Munn]{Lakshmanan2020}
+V.~Lakshmanan, S.~Robinson, and M.~Munn.
+\newblock \emph{Machine Learning Design Patterns}.
+\newblock O'Reilly Media, 2020.
+
+\bibitem[Lewis et~al.(2021{\natexlab{a}})Lewis, Bellomo, and
+  Ozkaya]{Lewis2021Mismatch}
+G.~A. Lewis, S.~Bellomo, and I.~Ozkaya.
+\newblock Characterizing and detecting mismatch in machine-learning-enabled
+  systems.
+\newblock In \emph{2021 IEEE/ACM 1st Workshop on AI Engineering---Software
+  Engineering for AI (WAIN)}, pages 133--140. IEEE, 2021{\natexlab{a}}.
+\newblock \doi{10.1109/WAIN52551.2021.00028}.
+
+\bibitem[Lewis et~al.(2021{\natexlab{b}})Lewis, Ozkaya, and
+  Xu]{Lewis2021Challenges}
+G.~A. Lewis, I.~Ozkaya, and X.~Xu.
+\newblock Software architecture challenges for {ML} systems.
+\newblock In \emph{2021 IEEE International Conference on Software Maintenance
+  and Evolution (ICSME)}, pages 634--638. IEEE, 2021{\natexlab{b}}.
+\newblock \doi{10.1109/ICSME52107.2021.00071}.
+
+\bibitem[Lin and Ryaboy(2013)]{Lin2013}
+J.~Lin and D.~Ryaboy.
+\newblock Scaling big data mining infrastructure: The {Twitter} experience.
+\newblock \emph{ACM SIGKDD Explorations Newsletter}, 14\penalty0 (2):\penalty0
+  6--19, 2013.
+\newblock \doi{10.1145/2481244.2481247}.
+
+\bibitem[Lunghi et~al.(2023)Lunghi, Simitsis, Caelen, and Bontempi]{Lunghi2023}
+D.~Lunghi, A.~Simitsis, O.~Caelen, and G.~Bontempi.
+\newblock Adversarial learning in real-world fraud detection: Challenges and
+  perspectives.
+\newblock In \emph{Proceedings of the Second ACM Data Economy Workshop}, pages
+  27--33. Association for Computing Machinery, 2023.
+\newblock \doi{10.1145/3600046.3600051}.
+
+\bibitem[Mosqueira-Rey et~al.(2023)Mosqueira-Rey, Hern\'{a}ndez-Pereira,
+  Alonso-R\'{i}os, Bobes-Bascar\'{a}n, and
+  Fern\'{a}ndez-Leal]{MosqueiraRey2023}
+E.~Mosqueira-Rey, E.~Hern\'{a}ndez-Pereira, D.~Alonso-R\'{i}os,
+  J.~Bobes-Bascar\'{a}n, and A.~Fern\'{a}ndez-Leal.
+\newblock Human-in-the-loop machine learning: A state of the art.
+\newblock \emph{Artificial Intelligence Review}, 56:\penalty0 3005--3054, 2023.
+\newblock \doi{10.1007/s10462-022-10246-w}.
+
+\bibitem[Muccini and Vaidhyanathan(2021)]{Muccini2021}
+H.~Muccini and K.~Vaidhyanathan.
+\newblock Software architecture for {ML}-based systems: What exists and what
+  lies ahead.
+\newblock In \emph{2021 IEEE/ACM 1st Workshop on AI Engineering---Software
+  Engineering for AI (WAIN)}, pages 121--128. IEEE, 2021.
+\newblock \doi{10.1109/WAIN52551.2021.00026}.
+
+\bibitem[Nazir et~al.(2024)Nazir, Bucaioni, and Pelliccione]{Nazir2024}
+R.~Nazir, A.~Bucaioni, and P.~Pelliccione.
+\newblock Architecting {ML}-enabled systems: Challenges, best practices, and
+  design decisions.
+\newblock \emph{Journal of Systems and Software}, 207:\penalty0 111860, 2024.
+\newblock \doi{10.1016/j.jss.2023.111860}.
+
+\bibitem[Richards and Ford(2025)]{Richards2025}
+M.~Richards and N.~Ford.
+\newblock \emph{Fundamentals of Software Architecture: A Modern Engineering
+  Approach}.
+\newblock O'Reilly Media, 2nd edition, 2025.
+
+\bibitem[Salwei and Carayon(2022)]{Salwei2022}
+M.~E. Salwei and P.~Carayon.
+\newblock A sociotechnical systems framework for the application of artificial
+  intelligence in health care delivery.
+\newblock \emph{Journal of Cognitive Engineering and Decision Making},
+  16\penalty0 (4):\penalty0 194--206, 2022.
+\newblock \doi{10.1177/15553434221097357}.
+
+\bibitem[Sculley et~al.(2015)Sculley, Holt, Golovin, Davydov, Phillips, Ebner,
+  Chaudhary, Young, Crespo, and Dennison]{Sculley2015}
+D.~Sculley, G.~Holt, D.~Golovin, E.~Davydov, T.~Phillips, D.~Ebner,
+  V.~Chaudhary, M.~Young, J.-F. Crespo, and D.~Dennison.
+\newblock Hidden technical debt in machine learning systems.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~28, 2015.
+
+\bibitem[{Tan Wei Hao} et~al.(2026){Tan Wei Hao}, Padmanabhan, and
+  Mallya]{Tan2026}
+B.~{Tan Wei Hao}, S.~Padmanabhan, and V.~Mallya.
+\newblock \emph{Machine Learning Platform Engineering: Build an Internal
+  Developer Platform for {ML} and {AI} Systems}.
+\newblock Manning, 2026.
+
+\bibitem[Washizaki et~al.(2020)Washizaki, Uchida, Khomh, and
+  Gu\'{e}h\'{e}neuc]{Washizaki2020}
+H.~Washizaki, H.~Uchida, F.~Khomh, and Y.-G. Gu\'{e}h\'{e}neuc.
+\newblock Machine learning architecture and design patterns.
+\newblock \emph{IEEE Software}, 37\penalty0 (4):\penalty0 76--84, 2020.
+\newblock \doi{10.1109/MS.2019.2961960}.
+
+\bibitem[Yuan et~al.(2026)Yuan, Yu, Liu, Sun, Zhang, and Xu]{Yuan2026}
+X.~Yuan, P.~Yu, S.~Liu, Z.~Sun, Y.~Zhang, and J.~Xu.
+\newblock An expert-in-the-loop framework for unknown attack detection via
+  open-set recognition.
+\newblock \emph{Journal of Computer Security}, 2026.
+\newblock \doi{10.1177/0926227X251414058}.
+\newblock Advance online publication.
+
+\bibitem[Zelvenskiy et~al.(2022)Zelvenskiy, Harisinghani, Yu, Ng, and
+  Wei]{Zelvenskiy2022}
+S.~Zelvenskiy, G.~Harisinghani, T.~Yu, E.~Ng, and R.~Wei.
+\newblock Project {RADAR}: Intelligent early fraud detection system with humans
+  in the loop.
+\newblock Uber Blog, 2022.
+\newblock URL
+  \url{https://www.uber.com/en-CR/blog/project-radar-intelligent-early-fraud-detection/}.
+
+\end{thebibliography}
