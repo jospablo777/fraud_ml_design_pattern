@@ -38,25 +38,25 @@ Figure 1 is the shortest summary of the repository. It introduces the basic prop
 
 ## From isolated models to ML-enabled fraud systems
 
-The systems literature repeatedly shows that a production model never lives alone. It sits inside a larger environment of data collection, feature generation, serving, monitoring, operational tooling, and organizational constraints. For fraud operations, that picture is still incomplete unless expert human work is made visible as part of the production system itself (Sculley et al., 2015; Lewis, Ozkaya, & Xu, 2021; Kästner, 2025).
+The systems literature repeatedly shows that a production model never lives alone (Sculley et al., 2015). It sits inside a larger environment of data collection, feature generation, serving, monitoring, operational tooling, and organizational constraints (Lewis, Ozkaya, & Xu, 2021; Kästner, 2025). For fraud operations, that picture is still incomplete unless expert human work is made visible as part of the production system itself.
 
-![Fig. 2. System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)](img/system_anatomy.png)
+![Fig. 2. System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)](img/system_anatomy.png).
 
 **Fig. 2.** System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)
 
 Figure 2 extends the familiar hidden-technical-debt picture into a fraud setting. The model is one component inside a broader socio-technical arrangement. Data quality, serving infrastructure, process tools, and analyst workflows all shape the actual behavior of the system seen by the business.
 
-The same logic applies at planning time. An ML-enabled fraud system should not be designed as a disconnected sequence where software is built first, the model is added later, and analyst workflow is improvised at the end. Business requirements, software architecture, ML development, human review, and platform concerns should be designed together.
+The same logic applies at planning time. An ML-enabled fraud system should not be designed as a disconnected sequence where software is built first, the model is added later, and analyst workflow is improvised at the end. Business requirements, software architecture, ML development, human review, and platform concerns should be designed together as seen in Fig. 3.
 
 ![Fig. 3. Planning view of an ML-enabled fraud system: business context, software architecture, traditional software, ML development, human expertise, and platform concerns should be co-designed. Adapted from Lewis, Ozkaya & Xu (2021), Andersen, & Maalej (2024), and Kästner (2025)](img/ml_enabled_system_architecture.png)
 
 **Fig. 3.** Planning view of an ML-enabled fraud system: business context, software architecture, traditional software, ML development, human expertise, and platform concerns should be co-designed. Adapted from Lewis, Ozkaya & Xu (2021), Andersen, & Maalej (2024), and Kästner (2025).
 
-Figure 3 is useful because it makes the architecture problem explicit. Fraud systems are not only about achieving predictive power; they are also about co-architecting the data-science workflow, the conventional software system, the human workbench, and the operational platform.
+Fraud systems are not only about achieving predictive power; they are also about co-architecting the data-science workflow, the conventional software system, the human workbench, and the operational platform.
 
 ## The design principle that holds the pattern together
 
-One of the key design ideas in the talk is that **score and policy should be separated**. A model produces an estimate. A policy layer turns that estimate into operational action under business constraints, governance requirements, analyst capacity, and risk appetite.
+One of the key design ideas in the talk is that **score and policy should be separated** (Fig. 4). A model produces an estimate. A policy layer turns that estimate into operational action under business constraints, governance requirements, analyst capacity, and risk appetite.
 
 ![Fig. 4. Score-to-policy-to-action pipeline: the model produces a risk score, a policy layer translates that score into operational logic, and only then does the system take action.](img/score_policy_action.png)
 
@@ -64,13 +64,13 @@ One of the key design ideas in the talk is that **score and policy should be sep
 
 That separation improves controllability and traceability. It also prevents the common mistake of treating the model as if it were the whole decision system. In operational fraud work, business logic often needs to account for analyst saturation, regional restrictions, temporary campaigns, service levels, and guardrails that should not be hard-coded into the model itself.
 
-Once score and policy are separated, the overall runtime pattern becomes easier to explain.
+Once score and policy are separated (Fig. 5), the overall runtime pattern becomes easier to explain.
 
 ![Fig. 5. Reference architecture of the ML-enabled HIL Triage pattern: business rules filter explicit cases, ML scores the non-trivial cases, and a decision policy routes them to approval, analyst review, or automatic mitigation.](img/hil_triage_reference_architecture.png)
 
 **Fig. 5.** Reference architecture of the ML-enabled HIL Triage pattern: business rules filter explicit cases, ML scores the non-trivial cases, and a decision policy routes them to approval, analyst review, or automatic mitigation.
 
-Figure 5 is the main runtime diagram of the repository. Rules handle explicit cases and guardrails. Machine learning compresses weak signals into a score or ranking. Policy maps that score to action. Ambiguous cases are routed to analysts. The architecture therefore combines automation and human judgment without pretending that either one can carry the full system alone.
+Rules handle explicit cases and guardrails. Machine learning compresses weak signals into a score or ranking. Policy maps that score to action. Ambiguous cases are routed to analysts. The architecture therefore combines automation and human judgment without pretending that either one can carry the full system alone.
 
 ## Analysts are part of the architecture
 
