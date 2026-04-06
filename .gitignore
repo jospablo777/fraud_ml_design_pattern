@@ -1,4 +1,65 @@
+# ── LaTeX auxiliary files ──
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.bcf
+*.idx
+*.ilg
+*.ind
+*.pdfsync
+*.dvi
+*-blx.bib
+*-blx.aux
+*.nlo
+*.nls
+
+# ── RStudio ──
+.Rproj.user/
+*.Rproj
+.Rhistory
+.Rdata
+.httr-oauth
+.RDataTmp
+*_cache/
+/cache/
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# ── R ──
+.Renviron
+.Rprofile
+
+# ── Quarto ──
+/.quarto/
+*_files/
+_site/
+
+# ── macOS ──
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── General ──
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+__pycache__/
+*.pyc
