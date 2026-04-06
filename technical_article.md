@@ -51,7 +51,7 @@ The same system view should shape the planning phase, not only post-deployment t
 
 **Fig. 3.** Planning view of an ML-enabled fraud system: business context, software architecture, traditional software, ML development, human expertise, and platform concerns should be co-designed. Adapted from Lewis, Ozkaya & Xu (2021), Andersen, & Maalej (2024), and Kästner (2025).
 
-Figure 3 broadens the lens from runtime anatomy to planning. Business requirements, conventional software, ML development, expert review, and platform infrastructure should be designed together. Lewis, Ozkaya, and Xu (2021) call attention to monitorability, co-architecting, and co-versioning as architectural concerns for ML systems. Andersen and Maalej (2024) show that human participation itself can be treated as a design-pattern concern. Kästner (2025) situates the model inside the product and operational system that makes it useful. Fraud prevention sits at the intersection of all three views.
+We broaden the lens from runtime anatomy to planning in Fig. 3. Business requirements, conventional software, ML development, expert review, and platform infrastructure should be designed together. Lewis, Ozkaya, and Xu (2021) call attention to monitorability, co-architecting, and co-versioning as architectural concerns for ML systems. Andersen and Maalej (2024) show that human participation itself can be treated as a design-pattern concern. Kästner (2025) situates the model inside the product and operational system that makes it useful. Fraud prevention sits at the intersection of all three views.
 
 ## 4. Why this repository proposes a design pattern
 
