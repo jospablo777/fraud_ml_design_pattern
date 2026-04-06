@@ -74,7 +74,7 @@ This framing is useful because it turns the talk from a general exhortation into
 
 ## 5. The anatomy of the proposed pattern
 
-The proposed pattern can be understood as a sequence of transformations from signal to action.
+The proposed pattern can be understood as a series of transformations that move from signal to action.
 
 The first important transformation is from observation to score. The model consumes features and estimates risk. The second is from score to policy. A separate policy layer interprets the score in light of operational goals and constraints. The third is from policy to action, where the system approves, blocks, escalates, or routes a case to review.
 
@@ -82,15 +82,15 @@ The first important transformation is from observation to score. The model consu
 
 **Fig. 4.** Score-to-policy-to-action pipeline: the model produces a risk score, a policy layer translates that score into operational logic, and only then does the system take action.
 
-The separation in Figure 4 is essential. It avoids the common but dangerous shortcut of treating the model score as if it were already a business decision. In operational settings, scores often need to be combined with guardrails, analyst saturation, time sensitivity, customer value, regional policy, and legal requirements. Those are policy concerns, not model parameters.
+The separation in Figure 4 is essential. It avoids the common but dangerous shortcut of treating the model score as if it were already a business decision (Chen et al., 2022). In operational settings, scores often need to be combined with guardrails, analyst saturation, time sensitivity, customer value, regional policy, and legal requirements (Kästner, 2025). Those are policy concerns, not model parameters.
 
-Once score and policy are separated, the architecture becomes clearer.
+Once score and policy are separated, the architecture can be stated more precisely. Fig. 5 summarizes that runtime logic as a reference pattern: business rules handle explicit cases, ML scores the non-trivial ones, and the policy layer decides whether the system should approve, escalate, or mitigate.
 
 ![Fig. 5. Reference architecture of the ML-enabled HIL Triage pattern: business rules filter explicit cases, ML scores the non-trivial cases, and a decision policy routes them to approval, analyst review, or automatic mitigation.](img/hil_triage_reference_architecture.png)
 
 **Fig. 5.** Reference architecture of the ML-enabled HIL Triage pattern: business rules filter explicit cases, ML scores the non-trivial cases, and a decision policy routes them to approval, analyst review, or automatic mitigation.
 
-Figure 5 shows the full runtime pattern. Deterministic rules sit near the entry point because some cases are explicit enough to justify immediate handling. Non-trivial cases reach the scoring layer. The policy layer then converts score into action. Low-risk cases may be approved automatically to reduce friction. Clear high-risk cases may be mitigated automatically. Ambiguous cases move to analysts.
+Deterministic rules sit near the entry point because some cases are explicit enough to justify immediate handling. Non-trivial cases reach the scoring layer. The policy layer then converts score into action. Low-risk cases may be approved automatically to reduce friction. Clear high-risk cases may be mitigated automatically. Ambiguous cases move to analysts.
 
 This structure has several advantages. It respects the strengths of each component, it separates inference from governance, and it creates a natural place to encode escalation logic. It also aligns well with the broader literature on learning to defer and selective intervention, where the goal is not merely to classify but to decide which cases should stay with the model and which should be routed to experts (Alves et al., 2025).
 
