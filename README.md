@@ -80,7 +80,7 @@ The human component is not an exception bucket added at the end of the pipeline.
 
 **Fig. 6.** Bidirectional collaboration between analysts and ML: models provide prioritization, speed, and focus, while analysts contribute feedback, calibration, contextual judgment, and learning.
 
-Figure 6 makes the relationship symmetrical. The model is useful because it helps analysts focus scarce attention on cases that matter most. Analysts are useful because they improve the system through adjudication, context, and feedback. This is closer to a closed-loop intelligence architecture than to a one-way automation pipeline.
+The relationship is symmetrical, as illustrated in Fig. 6. The model is useful because it helps analysts focus scarce attention on cases that matter most. Analysts are useful because they improve the system through adjudication, context, and feedback. This is closer to a closed-loop intelligence architecture than to a one-way automation pipeline.
 
 That loop becomes even clearer when feedback is represented explicitly inside the architecture.
 
@@ -88,7 +88,7 @@ That loop becomes even clearer when feedback is represented explicitly inside th
 
 **Fig. 7.** Closed-loop HIL triage with explicit feedback paths: analyst outcomes feed rule maintenance and model improvement, turning review into a learning mechanism rather than an operational dead end.
 
-Figure 7 shows why structured feedback matters. A review queue should not end with a manual decision that disappears into narrative notes. Analyst outcomes can improve rules, thresholds, features, labels, and model behavior if they are captured in a disciplined way.
+As seen in Fig. 7, structured feedback matters. A review queue should not end with a manual decision that disappears into narrative notes. Analyst outcomes can improve rules, thresholds, features, labels, and model behavior if they are captured in a disciplined way.
 
 Figure 8 condenses that idea into an operational-learning view. It is simpler than the reference architecture, but useful for explaining the core improvement loop to readers who want the shortest possible visual summary.
 
