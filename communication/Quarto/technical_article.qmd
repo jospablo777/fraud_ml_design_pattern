@@ -4,6 +4,7 @@ subtitle: "A technical article extending the Nerdearla Chile 2026 talk"
 author:
   - name: "José P. Barrantes"
     url: https://www.linkedin.com/in/jose-barrantes/
+published-title: "Last updated"
 date: last-modified
 format:
   html:
@@ -20,7 +21,7 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-GitHub Repo: [fraud_ml_design_pattern](https://github.com/jospablo777/fraud_ml_design_pattern)
+GitHub Repo: [Fraud System Architecture](https://github.com/jospablo777/fraud_ml_design_pattern)
 
 ## Abstract {.unnumbered}
 
