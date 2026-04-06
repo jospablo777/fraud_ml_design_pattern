@@ -13,7 +13,7 @@
 \definecolor{rulegray}{HTML}{BDC3C7}
 \usepackage{marginnote}
 \renewcommand*{\marginfont}{\footnotesize\sffamily}
-\newcommand{\defn}[2][0pt]{\marginnote{\fcolorbox{accentteal!30}{accentteal!6}{\parbox{3.5cm}{\raggedright\small\sffamily\color{accentteal}\vspace{2pt}#2\vspace{2pt}}}}[#1]}
+\newcommand{\defn}[2][0pt]{\marginnote{\fcolorbox{accentteal!30}{accentteal!6}{\parbox{3.5cm}{\raggedright\footnotesize\sffamily\color{accentteal}\vspace{2pt}#2\vspace{2pt}}}}[#1]}
 \usepackage{titlesec}
 \titleformat{\section}{\Large\bfseries\color{darkgray}}{\thesection}{0.6em}{}
 \titleformat{\subsection}{\large\bfseries\color{darkgray}}{\thesubsection}{0.5em}{}
@@ -59,7 +59,7 @@ This article fills the gap left by a short conference talk: the broader software
 \defn{\textbf{Hybrid system:} Combines deterministic rules, ML scoring, decision policy, and expert human judgment rather than relying on any single component.}%
 The central thesis: robust fraud-prevention systems are hybrid systems. They rarely succeed as purely manual or purely automatic workflows. The most resilient architecture combines deterministic controls, statistical scoring, decision policy, and expert human judgment.
 
-\defn{\textbf{Socio-technical system:} Behavior shaped by both technical components (models, pipelines, infrastructure) and human work (analyst review, organizational decisions, governance).}%
+\defn[0.75cm]{\textbf{Socio-technical system:} Behavior shaped by both technical components (models, pipelines, infrastructure) and human work (analyst review, organizational decisions, governance).}%
 That claim is architectural. Production ML systems require supporting software, data pipelines, monitoring, deployment structures, and cross-functional engineering practices \citep{Sculley2015, Amershi2019SE, Lewis2021Challenges, Nazir2024}. In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, and operational feedback loops. The unit of design is the socio-technical system \citep{Dobbe2024, Salwei2022}.
 
 \begin{figure}[H]\centering
@@ -77,13 +77,13 @@ Fraud prevention is not a stable prediction problem. Systems combine rules, supe
 \defn{\textbf{Adversarial adaptation:} Fraudsters change tactics once a defense becomes known, making detection a moving contest.}%
 First, attackers adapt \citep{Bolton2002, Carcillo2021, Lunghi2023}.
 
-\defn[0.2cm]{\textbf{Label delay:} Ground truth is often confirmed only after complaints or investigations---incomplete at decision time.}%
+\defn[0.5cm]{\textbf{Label delay:} Ground truth is often confirmed only after complaints or investigations---incomplete at decision time.}%
 Second, labels are delayed and imperfect \citep{Carcillo2021, Lunghi2023}. The system acts inside the environment that later generates its own labels.
 
-\defn[0.2cm]{\textbf{Asymmetric error costs:} False negatives cause direct loss; false positives cause friction. Not interchangeable.}%
+\defn[0.45cm]{\textbf{Asymmetric error costs:} False negatives cause direct loss; false positives cause friction. Not interchangeable.}%
 Third, error costs are asymmetric \citep{Bolton2002, HernandezAros2024}.
 
-\defn[0.2cm]{\textbf{Time sensitivity:} A correct decision made too late may still be operationally poor.}%
+\defn[0.45cm]{\textbf{Time sensitivity:} A correct decision made too late may still be operationally poor.}%
 Fourth, many decisions are time-sensitive \citep{Bolton2002, Lunghi2023, Carcillo2021}. Architecture determines which cases are handled automatically and how scarce analyst attention is reserved for the ambiguous zone.
 
 These properties explain the move toward system-centric and architecture-centric thinking \citep{Muccini2021, Lewis2021Challenges, Nazir2024}.
@@ -116,14 +116,14 @@ Figure~\ref{fig:planning-view} broadens the lens to planning. \citet{Lewis2021Ch
 \defn{\textbf{Design pattern:} A reusable solution to a recurring problem. Specifies context, forces, solution, and consequences.}%
 The architecture is proposed as a reusable response to a recurring class of problems.
 
-\defn{\textbf{ML architecture patterns:} Washizaki et al.\ identified 33 ML patterns. Heiland et al.\ expanded to 70.}%
+\defn[0.55cm]{\textbf{ML architecture patterns:} Washizaki et al.\ identified 33 ML patterns. Heiland et al.\ expanded to 70.}%
 \citet{Washizaki2020} documented recurring ML patterns. \citet{Heiland2023} expanded the repository. \citet{Jarvenpaa2024} focused on reusable tactics. \citet{Cruz2023} reinforced architecture rationale.
 
 \defn{\textbf{HIL patterns:} Andersen \& Maalej catalog reusable HIL patterns spanning data prep, training, operation, monitoring, explanation.}%
 \citet{Andersen2024} frame HIL as a design space with reusable patterns.
 
-\defn{\textbf{HITL-ML family:} Active learning, interactive ML, machine teaching. Differs in \emph{how} and \emph{when} human expertise enters the loop.}%
-\citet{MosqueiraRey2023} describe HITL-ML as a family of approaches.
+\defn{\textbf{HIL-ML family:} Active learning, interactive ML, machine teaching. Differs in \emph{how} and \emph{when} human expertise enters the loop.}%
+\citet{MosqueiraRey2023} describe HIL-ML as a family of approaches.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.65\textwidth]{pattern_context_forces_consequences.png}
@@ -178,10 +178,10 @@ Figure~\ref{fig:bidirectional} shows two-way collaboration \citep{MosqueiraRey20
 \defn{\textbf{Feedback propagation:} Even sparse analyst annotations can improve models when propagated through a transaction graph.}%
 \citet{Kadam2024} treats feedback as propagable and reusable signal.
 
-\defn{\textbf{Open-set recognition:} Detecting cases outside any known class. Human review is most valuable at the boundary of model knowledge.}%
+\defn[0.65cm]{\textbf{Open-set recognition:} Detecting cases outside any known class. Human review is most valuable at the boundary of model knowledge.}%
 Expert-in-the-loop approaches suggest human review is most valuable where the model faces novelty \citep{Yuan2026}.
 
-\defn{\textbf{Retrospective audit:} Review samples of automatically resolved cases to catch errors and revise routing logic.}%
+\defn[0.68cm]{\textbf{Retrospective audit:} Review samples of automatically resolved cases to catch errors and revise routing logic.}%
 Analysts should also audit automatically resolved cases \citep{Tan2026, Chen2022, Andersen2024, Kadam2024}.
 
 \begin{figure}[H]\centering
