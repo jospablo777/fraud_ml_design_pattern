@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 05:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 05:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -681,13 +681,13 @@ Package rerunfilecheck Info: File `technical_article.out' has not changed.
 Here is how much of TeX's memory you used:
  15302 strings out of 467525
  250584 string characters out of 5418983
- 719241 words of memory out of 5000000
+ 719261 words of memory out of 5000000
  43713 multiletter control sequences out of 15000+600000
  715456 words of font info for 198 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,13n,84p,1301b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb>
-Output written on technical_article.pdf (12 pages, 1404176 bytes).
+Output written on technical_article.pdf (12 pages, 1404123 bytes).
 PDF statistics:
  609 PDF objects out of 1000 (max. 8388607)
  511 compressed objects within 6 object streams
