@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 04:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 04:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,13 +839,7 @@ Package marginnote Info: Margin note 9.2 is on absolute page 9 on input line 26
 Package marginnote Info: right page because not two side mode on input line 265
 .
 Package marginnote Info: xpos seems to be 71.13188pt on input line 265.
-(./technical_article.bbl [9] [10] [11] [12]
-Underfull \hbox (badness 1052) in paragraph at lines 272--278
-\T1/lmr/m/n/10.95 (+20) loop.  Uber Blog, 2022.  URL [][]$https : / / www . ube
-r . com / en-[]CR / blog /
- []
-
-) [13] (./technical_article.aux)
+(./technical_article.bbl [9] [10] [11]) [12] (./technical_article.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -854,13 +848,13 @@ Package rerunfilecheck Info: File `technical_article.out' has not changed.
 (rerunfilecheck)             Checksum: FD876A7FA64B3910B1860B9FA61BE650;3453.
  ) 
 Here is how much of TeX's memory you used:
- 15322 strings out of 467525
- 250555 string characters out of 5418983
- 720416 words of memory out of 5000000
- 43716 multiletter control sequences out of 15000+600000
- 719021 words of font info for 207 fonts, out of 8000000 for 9000
+ 15306 strings out of 467525
+ 250391 string characters out of 5418983
+ 719241 words of memory out of 5000000
+ 43715 multiletter control sequences out of 15000+600000
+ 718252 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,13n,84p,1206b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,13n,84p,1206b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
 e/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/tex
@@ -870,10 +864,10 @@ blic/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lm
 ss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on technical_article.pdf (13 pages, 1389815 bytes).
+Output written on technical_article.pdf (12 pages, 1388228 bytes).
 PDF statistics:
- 612 PDF objects out of 1000 (max. 8388607)
- 516 compressed objects within 6 object streams
- 73 named destinations out of 1000 (max. 500000)
+ 602 PDF objects out of 1000 (max. 8388607)
+ 507 compressed objects within 6 object streams
+ 72 named destinations out of 1000 (max. 500000)
  49317 words of extra memory for PDF output out of 51595 (max. 10000000)
 
