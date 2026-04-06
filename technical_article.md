@@ -202,11 +202,11 @@ A fifth open question concerns the role of large language models and generative 
 
 ## 12. Conclusion
 
-The argument of this article is that fraud prevention should be designed as an ML-enabled socio-technical architecture. Rules, machine learning, analyst work, policy, and platform support all contribute to system behavior. Robust design therefore requires more than a good classifier. It requires explicit separation between score and policy, intentional routing of ambiguous cases to experts, structured feedback loops, broad evaluation beyond accuracy, and MLOps practices that connect runtime behavior back to data, models, and policy.
+This article has argued that fraud prevention should be designed as an ML-enabled socio-technical architecture. System behavior is produced not by the model alone, but by the interaction of rules, machine learning, analyst work, policy, and platform support. Robust design therefore requires more than a strong classifier. It requires explicit separation between score and policy, deliberate routing of ambiguous cases to expert review, structured feedback loops, evaluation that extends beyond accuracy, and operational practices that connect runtime behavior back to data, models, and policy.
 
-The resulting pattern can be summarized simply. Use rules where the organization already has explicit knowledge and guardrails. Use machine learning where prioritization and signal compression create scale. Use analysts where context and judgment matter. Keep score separate from policy. Capture feedback in a structured way. Design the surrounding platform so that the system can be observed, revised, and improved over time.
+The proposed pattern can be stated simply. Use rules where the organization already has explicit knowledge and firm guardrails. Use machine learning where prioritization and signal compression create scale. Use analysts where context, exception handling, and judgment matter. Keep score separate from policy. Capture feedback in a structured form. Design the surrounding platform so that the system can be observed, revised, and improved over time.
 
-That is the architecture developed in the talk and extended in this repository.
+More broadly, the point is not only that fraud systems need humans in the loop. It is that this combination of rules, scoring, policy, analyst review, and closed-loop learning deserves to be treated as a reusable architectural response for a high-stakes domain. That is the argument presented in the talk and developed in greater depth in this article.
 
 ## References
 
