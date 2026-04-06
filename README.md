@@ -1,6 +1,6 @@
 # Designing fraud-prevention systems that keep analysts in the loop
 
-Welcome to the companion repository for the Nerdearla Chile 2026 talk **"Fraud prevention, machine learning, and design patterns: keep your analysts in the loop"** by **José P. Barrantes**.
+Welcome to the companion repository for the [Nerdearla Chile 2026](https://nerdearla.com/chile/) talk **[Fraud prevention, machine learning, and design patterns: keep your analysts in the loop](https://nerdearla.com/chile/schedule/prevencion-de-fraude-machine-learning-y-patrones-de-diseno-manten-a-tus-analistas-en-el-loop/)** by **José P. Barrantes**.
 
 This repository is a documentation-first extension of the talk. The slides introduce the main ideas in a short conference format; the README and the technical article develop those ideas with more space, more figures, and more literature. The central argument is that fraud prevention is not only a modeling problem. It is an **ML-enabled software-architecture problem** that must be solved with rules, machine learning, operational policy, platform support, and expert analysts working together.
 
