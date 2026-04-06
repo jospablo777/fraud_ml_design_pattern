@@ -259,7 +259,7 @@ Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudh
 
 Tan, B. T. W. H., Padmanabhan, S., & Mallya, V. (2026). *Machine learning platform engineering: Build an internal developer platform for ML and AI systems*. Manning.
 
-Washizaki, H., Uchida, H., Khomh, F., & Guéhéneuc, Y.-G. (2020). *Machine learning architecture and design patterns*. **IEEE Software, 37**(4), 76-84. https://doi.org/10.1109/MS.2019.2961960
+Washizaki, H., Uchida, H., Khomh, F., & Guéhéneuc, Y.-G. (2020). *Machine learning architecture and design patterns*. **IEEE Software, 37**(4), 76-84. https://doi.org/10.5555/3721041.3721069
 
 Yuan, X., Yu, P., Liu, S., Sun, Z., Zhang, Y., & Xu, J. (2026). *An expert-in-the-loop framework for unknown attack detection via open-set recognition*. **Journal of Computer Security**. Advance online publication. https://doi.org/10.1177/0926227X251414058
 
