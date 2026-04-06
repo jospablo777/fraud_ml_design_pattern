@@ -43,7 +43,7 @@ Sculley et al. (2015) famously argued that much of the real cost of ML systems l
 
 **Fig. 2.** System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)
 
-Figure 2 adapts the system-anatomy perspective to fraud operations. It places the learned component inside a wider environment of data flows, serving infrastructure, process tools, monitoring, and human work. This matters because many operational failures appear at the boundaries. A feature outage, a bad integration, a misleading analyst view, or a monitoring blind spot can be just as damaging as a weak model.
+We adapt the system-anatomy perspective to fraud operations. It places the learned component inside a wider environment of data flows, serving infrastructure, process tools, monitoring, and human work. This matters because many operational failures appear at the boundaries. A feature outage, a bad integration, a misleading analyst view, or a monitoring blind spot can be just as damaging as a weak model.
 
 The same system view should shape the planning phase, not only post-deployment troubleshooting.
 
