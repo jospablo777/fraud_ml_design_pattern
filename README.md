@@ -14,13 +14,13 @@ In practice, robust fraud systems are neither purely manual nor purely automatic
 
 ## How to read this repository
 
-Readers who want a quick walkthrough can start with this README and then continue to the technical article. Readers who want the full argument can begin with the slides, use the README as an orientation guide, and then move to the longer article for the complete discussion and bibliography.
+Readers who want a quick overview can start with this README. Readers who want the conference version can open the slides. Readers who want the full argument, figures, and bibliography can continue to the technical article in PDF or web format.
 
 A useful reading path is:
 
-1. Read the short conceptual sections below.
-2. Open the figures as you move through the text.
-3. Continue to `technical_article.md` for the full treatment.
+1. Start with this README for the core thesis.
+2. Open the slides for the short talk version.
+3. Continue to the technical article for an in-depth treatment.
 
 
 ## Core thesis
