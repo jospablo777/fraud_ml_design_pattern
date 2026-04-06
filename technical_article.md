@@ -1,0 +1,234 @@
+# Designing fraud-prevention systems that keep analysts in the loop
+### A technical article extending the Nerdearla Chile 2026 talk
+
+## Abstract
+
+This article extends the Nerdearla Chile 2026 talk "Fraud prevention, machine learning, and design patterns: keep your analysts in the loop." The main claim is that fraud prevention should be treated as an **ML-enabled software-architecture problem**, not only as a classification problem. In real operations, rules, machine learning, operational policy, analyst work, and platform engineering all shape outcomes. Looking only at model performance hides the socio-technical nature of the system.
+
+The article develops a design-pattern proposition for **ML-enabled Human-in-the-Loop (HIL) Triage**. The proposed pattern uses rules for explicit cases, machine learning for scoring and prioritization, policy for routing and action selection, and expert analysts for ambiguous cases and structured feedback. The discussion connects this architecture to the literature on software architecture for ML systems, human-in-the-loop design, design patterns for AI-based systems, learning to defer, alert prioritization, reliable machine learning, and platform engineering.
+
+## 1. Introduction
+
+The conference talk that accompanies this repository was intentionally concise. A short slot is useful for communicating the core intuition, but it cannot fully explain the broader software-architecture background, the design-pattern framing, the operational consequences, or the connections to MLOps and platform engineering. This article exists to fill that gap.
+
+The central thesis is straightforward: robust fraud-prevention systems are hybrid systems. They rarely succeed as purely manual workflows, because the volume of traffic and the speed of attack make full manual review infeasible. They also rarely succeed as purely automatic systems, because high-stakes decisions must account for ambiguity, changing attacker behavior, incomplete labels, asymmetric costs, and governance constraints. The most resilient architecture combines deterministic controls, statistical scoring, decision policy, and expert human judgment.
+
+That claim is not merely organizational. It is architectural. Production machine-learning systems already require supporting software, data pipelines, monitoring, and deployment structures (Sculley et al., 2015; Lewis, Ozkaya, & Xu, 2021; Nazir, Bucaioni, & Pelliccione, 2024). In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not the model in isolation; it is the full socio-technical system that converts signals into actions.
+
+![Fig. 1. A conceptual overview of the pattern: effective fraud systems are built from the interaction of rules, machine learning, and expert analysts rather than any one component in isolation.](img/fraud_system_three_pillars.png)
+
+**Fig. 1.** A conceptual overview of the pattern: effective fraud systems are built from the interaction of rules, machine learning, and expert analysts rather than any one component in isolation.
+
+Figure 1 captures the argument in its simplest form. Fraud systems benefit from three complementary capabilities. Rules encode explicit knowledge and guardrails. Machine learning compresses heterogeneous signals into scores or rankings. Analysts contribute judgment, novelty detection, and feedback. The point of the pattern is not to declare one of those capabilities superior; it is to design their interaction well.
+
+## 2. Why fraud prevention becomes an architecture problem
+
+Fraud prevention is not a stable prediction problem in which one optimizes a model once and then serves it indefinitely. It is adversarial, operational, and intervention-dependent. Those properties make architecture central.
+
+First, attackers adapt. A rule that works today may become useless once fraudsters learn the boundary. A model that looks strong on historical data may deteriorate under new attack campaigns, new geographies, or new channels. This is one reason fraud research has increasingly emphasized adaptive systems, anomaly detection, and the combination of supervised and unsupervised approaches (Bolton & Hand, 2002; Hilal, Gadsden, & Yawney, 2022; Lunghi et al., 2023).
+
+Second, labels are delayed and imperfect. Some cases are never confirmed. Some interventions change the future data distribution that the system will later observe. That means the fraud system is not only predicting outcomes; it is also participating in the environment that generates future labels.
+
+Third, error costs are asymmetric. Missing a harmful case and inconveniencing a legitimate customer are both costly, but in different ways. The architecture must therefore manage a policy problem, not only a statistical one.
+
+Fourth, many decisions are time-sensitive. Some cases can be investigated asynchronously, but others need immediate action. In those situations, architecture determines whether the system can route low-risk traffic smoothly while reserving expensive human attention for the ambiguous zone.
+
+These properties help explain why the literature on ML-enabled software systems has moved from model-centric discussions toward more system-centric and architecture-centric thinking (Muccini & Vaidhyanathan, 2021; Lewis, Ozkaya, & Xu, 2021; Nazir et al., 2024).
+
+## 3. From hidden technical debt to ML-enabled fraud systems
+
+Sculley et al. (2015) famously argued that much of the real cost of ML systems lies outside the model itself. Data dependencies, feature extraction, configuration, serving, monitoring, and process tooling all create hidden technical debt. That insight is especially powerful in fraud prevention because it helps expose a misleading simplification: a fraud model is never the whole fraud system.
+
+![Fig. 2. System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)](img/system_anatomy.png)
+
+**Fig. 2.** System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)
+
+Figure 2 adapts the system-anatomy perspective to fraud operations. It places the learned component inside a wider environment of data flows, serving infrastructure, process tools, monitoring, and human work. This matters because many operational failures appear at the boundaries. A feature outage, a bad integration, a misleading analyst view, or a monitoring blind spot can be just as damaging as a weak model.
+
+The same system view should shape the planning phase, not only post-deployment troubleshooting.
+
+![Fig. 3. Planning view of an ML-enabled fraud system: business context, software architecture, traditional software, ML development, human expertise, and platform concerns should be co-designed. Adapted from Lewis, Ozkaya & Xu (2021), Andersen, & Maalej (2024), and Kästner (2025)](img/ml_enabled_system_architecture.png)
+
+**Fig. 3.** Planning view of an ML-enabled fraud system: business context, software architecture, traditional software, ML development, human expertise, and platform concerns should be co-designed. Adapted from Lewis, Ozkaya & Xu (2021), Andersen, & Maalej (2024), and Kästner (2025).
+
+Figure 3 broadens the lens from runtime anatomy to planning. Business requirements, conventional software, ML development, expert review, and platform infrastructure should be designed together. Lewis, Ozkaya, and Xu (2021) call attention to monitorability, co-architecting, and co-versioning as architectural concerns for ML systems. Andersen and Maalej (2024) show that human participation itself can be treated as a design-pattern concern. Kästner (2025) situates the model inside the product and operational system that makes it useful. Fraud prevention sits at the intersection of all three views.
+
+## 4. Why this repository proposes a design pattern
+
+The architecture discussed here is not a one-off diagram. It is proposed as a reusable response to a recurring class of problems. In design-pattern terms, that means specifying context, forces, solution, and consequences.
+
+Pattern literature for AI and ML systems is still maturing. Washizaki et al. (2020) documented recurring architecture and design patterns for machine-learning systems. Heiland, Hauser, and Bogner (2023) expanded the pattern repository for AI-based systems. Järvenpää et al. (2024) focused on reusable architectural tactics for ML-enabled systems. Cruz et al. (2023) reinforced the importance of architecture rationale and evaluation. Taken together, these works suggest that teams need more explicit and reusable architecture knowledge for ML-enabled systems.
+
+That is exactly the motivation for formalizing an ML-enabled HIL triage pattern for fraud.
+
+![Fig. 12. Pattern framing for ML-enabled human-in-the-loop fraud triage: context, forces, reusable solution, consequences, and related lineage. Synthesized from Lakshmanan, Robinson, & Munn (2021), Heiland et al. (2023), Cruz et al. (2023), and Järvenpää et al. (2024).](img/pattern_context_forces_consequences.png)
+
+**Fig. 12.** Pattern framing for ML-enabled human-in-the-loop fraud triage: context, forces, reusable solution, consequences, and related lineage. Synthesized from Lakshmanan, Robinson, & Munn (2021), Heiland et al. (2023), Cruz et al. (2023), and Järvenpää et al. (2024).
+
+Figure 12 makes the pattern argument explicit. The context is a fraud operation in which review demand exceeds analyst capacity, some cases require real-time action, attackers adapt, and error costs are asymmetric. The forces in tension include speed versus caution, customer friction versus missed fraud, autonomy versus control, and expertise versus capacity. The reusable solution is to combine rules, scoring, policy, analyst review, and feedback loops. The positive consequences include better use of scarce analyst attention and stronger governance. The costs include complexity, calibration work, queue management, and traceability obligations.
+
+This framing is useful because it turns the talk from a general exhortation into a reusable architectural idea. It clarifies when the pattern is appropriate, why it is needed, and what trade-offs it carries.
+
+## 5. The anatomy of the proposed pattern
+
+The proposed pattern can be understood as a sequence of transformations from signal to action.
+
+The first important transformation is from observation to score. The model consumes features and estimates risk. The second is from score to policy. A separate policy layer interprets the score in light of operational goals and constraints. The third is from policy to action, where the system approves, blocks, escalates, or routes a case to review.
+
+![Fig. 4. Score-to-policy-to-action pipeline: the model produces a risk score, a policy layer translates that score into operational logic, and only then does the system take action.](img/score_policy_action.png)
+
+**Fig. 4.** Score-to-policy-to-action pipeline: the model produces a risk score, a policy layer translates that score into operational logic, and only then does the system take action.
+
+The separation in Figure 4 is essential. It avoids the common but dangerous shortcut of treating the model score as if it were already a business decision. In operational settings, scores often need to be combined with guardrails, analyst saturation, time sensitivity, customer value, regional policy, and legal requirements. Those are policy concerns, not model parameters.
+
+Once score and policy are separated, the architecture becomes clearer.
+
+![Fig. 5. Reference architecture of the ML-enabled HIL Triage pattern: business rules filter explicit cases, ML scores the non-trivial cases, and a decision policy routes them to approval, analyst review, or automatic mitigation.](img/hil_triage_reference_architecture.png)
+
+**Fig. 5.** Reference architecture of the ML-enabled HIL Triage pattern: business rules filter explicit cases, ML scores the non-trivial cases, and a decision policy routes them to approval, analyst review, or automatic mitigation.
+
+Figure 5 shows the full runtime pattern. Deterministic rules sit near the entry point because some cases are explicit enough to justify immediate handling. Non-trivial cases reach the scoring layer. The policy layer then converts score into action. Low-risk cases may be approved automatically to reduce friction. Clear high-risk cases may be mitigated automatically. Ambiguous cases move to analysts.
+
+This structure has several advantages. It respects the strengths of each component, it separates inference from governance, and it creates a natural place to encode escalation logic. It also aligns well with the broader literature on learning to defer and selective intervention, where the goal is not merely to classify but to decide which cases should stay with the model and which should be routed to experts (Alves et al., 2025).
+
+## 6. Analysts are a runtime component, not a fallback afterthought
+
+A recurring weakness in ML system design is to treat human review as a vague fallback step. The pattern proposed here argues for the opposite. Analysts should be considered explicit runtime components of the architecture.
+
+![Fig. 6. Bidirectional collaboration between analysts and ML: models provide prioritization, speed, and focus, while analysts contribute feedback, calibration, contextual judgment, and learning.](img/bidirectional_human_ml_collaboration.png)
+
+**Fig. 6.** Bidirectional collaboration between analysts and ML: models provide prioritization, speed, and focus, while analysts contribute feedback, calibration, contextual judgment, and learning.
+
+Figure 6 frames the relationship as two-way collaboration. The model accelerates prioritization and reduces search cost. Analysts supply interpretation, exception handling, escalation judgment, and feedback. That feedback is not just an annotation activity for offline training. It is part of the production operation.
+
+![Fig. 7. Closed-loop HIL triage with explicit feedback paths: analyst outcomes feed rule maintenance and model improvement, turning review into a learning mechanism rather than an operational dead end.](img/hil_triage_feedback_architecture.png)
+
+**Fig. 7.** Closed-loop HIL triage with explicit feedback paths: analyst outcomes feed rule maintenance and model improvement, turning review into a learning mechanism rather than an operational dead end.
+
+Figure 7 makes that point concrete. Analyst outcomes should feed both rule maintenance and model improvement. That means review results must be structured enough to support relabeling, rule creation, threshold changes, and post-incident analysis. Kadam (2024) is especially relevant here because it treats human-in-the-loop fraud feedback not only as ad hoc review, but as feedback that can be propagated and reused.
+
+Figure 8 presents the same idea in a compact operational form.
+
+![Fig. 8. Operative learning in ML-enabled HIL triage: downstream feedback should update both rules and models so that operations become a source of system learning.](img/operative_learning.png)
+
+**Fig. 8.** Operative learning in ML-enabled HIL triage: downstream feedback should update both rules and models so that operations become a source of system learning.
+
+The virtue of Figure 8 is its simplicity. It helps emphasize that the desired endpoint is not a pipeline that stops after action, but an operating loop that learns from action.
+
+Operationalization also requires a concrete analyst workbench.
+
+![Fig. 9. Analyst workbench for HIL fraud triage: ranked cases, risk bands, reason codes, SLA timers, and structured feedback turn the architecture into an operational review system. Synthesized from Jalalvand et al. (2024), Ghadermazi et al. (2024), and Alves et al. (2025).](img/analyst_queue_ui_mockup.png)
+
+**Fig. 9.** Analyst workbench for HIL fraud triage: ranked cases, risk bands, reason codes, SLA timers, and structured feedback turn the architecture into an operational review system. Synthesized from Jalalvand et al. (2024), Ghadermazi et al. (2024), and Alves et al. (2025).
+
+Figure 9 is intentionally concrete. Alert prioritization research repeatedly highlights the importance of workload, context, skill, assignment, and review efficiency (Jalalvand et al., 2024; Ghadermazi, Shah, & Jajodia, 2024). Learning-to-defer research adds the idea that expert availability and heterogeneity matter for system performance (Alves et al., 2025). A practical analyst interface should therefore expose ranked cases, top signals, SLA pressure, action controls, and structured feedback fields. Without those elements, the architecture remains abstract and hard to operate.
+
+## 7. Evaluation must fit the socio-technical system
+
+One of the strongest consequences of the architecture view is that evaluation has to widen. A system that routes decisions across automation and human review should not be judged only with a single model metric.
+
+![Fig. 10. Metrics and trade-offs for ML-enabled human-in-the-loop fraud triage: model quality, queue operations, runtime quality, and policy behavior should be evaluated together. Synthesized from Lewis et al. (2021), Jalalvand et al. (2024), Ghadermazi et al. (2024), Alves et al. (2025), Chen et al. (2022), and Tan et al. (2026).](img/metrics_and_tradeoffs_framework.png)
+
+**Fig. 10.** Metrics and trade-offs for ML-enabled human-in-the-loop fraud triage: model quality, queue operations, runtime quality, and policy behavior should be evaluated together. Synthesized from Lewis et al. (2021), Jalalvand et al. (2024), Ghadermazi et al. (2024), Alves et al. (2025), Chen et al. (2022), and Tan et al. (2026).
+
+Figure 10 proposes a broader evaluation frame. Data and input quality matter because distribution shifts, missing features, or stale inputs can damage the system before the model even acts. Model and decision quality still matter, but metrics such as precision at the top of the queue, recall on confirmed fraud, calibration, and deferral rate are often more useful than a single aggregate score. Queue and analyst operations matter because backlog size, review latency, agreement, and SLA behavior shape the real effectiveness of the system. Runtime and platform quality matter because latency, error rates, uptime, and observability determine whether the decision system remains usable in production.
+
+The policy box in Figure 10 is equally important. Approval, review, and block rates are not only downstream consequences; they are part of what the organization is choosing. This is another reason score and policy should be treated separately.
+
+The trade-off strip at the bottom is not decorative. It reflects the fact that fraud systems almost always move along frontiers: speed versus caution, fraud catch rate versus customer friction, coverage versus analyst capacity, and adaptability versus auditability. Reliable ML in production requires acknowledging those frontiers explicitly rather than pretending they disappear (Chen et al., 2022).
+
+## 8. MLOps and platform engineering are part of the argument
+
+The pattern does not end at runtime routing. It has an operational lifecycle. Feedback from deployment should inform data curation, feature maintenance, retraining, and policy revision.
+
+![Fig. 11. MLOps feedback lifecycle for ML-enabled HIL fraud systems: runtime monitoring and analyst feedback support data curation, model improvement, and policy revision. Adapted from Lewis, Ozkaya, & Xu (2021), extended with platform-engineering concepts from Tan, Padmanabhan, & Mallya (2026), and specialized for fraud feedback loops using Kadam (2024).](img/mlops_feedback_lifecycle.png)
+
+**Fig. 11.** MLOps feedback lifecycle for ML-enabled HIL fraud systems: runtime monitoring and analyst feedback support data curation, model improvement, and policy revision. Adapted from Lewis, Ozkaya, & Xu (2021), extended with platform-engineering concepts from Tan, Padmanabhan, & Mallya (2026), and specialized for fraud feedback loops using Kadam (2024).
+
+Figure 11 is where architecture meets MLOps and platform engineering. The upper part of the diagram represents the offline build loop: data capture, feature generation, model training, and evaluation. The lower part represents online operation: deployment, runtime monitoring, analyst review, and structured feedback capture. The side loops show why feedback should not be collapsed into a single retraining arrow. Some feedback should improve the dataset or features; some should drive model improvement; some should revise rules, thresholds, or routing policy.
+
+This is consistent with the literature. Lewis, Ozkaya, and Xu (2021) emphasize monitorability, maintenance, and evolution. Lewis, Bellomo, and Ozkaya (2021) discuss mismatch between assumptions made by different roles and system parts. Tan, Padmanabhan, and Mallya (2026) frame platform support as an important way to reduce accidental complexity and create repeatable paths for deployment, observability, and governance. Kadam (2024) brings the fraud-specific feedback loop into that broader lifecycle.
+
+The platform foundation shown in Figure 11 also matters. Versioning, feature storage, registry services, observability, and governance are not optional conveniences for mature systems. They are part of what makes the architecture maintainable.
+
+## 9. What the pattern improves, and what it costs
+
+The proposed pattern improves several things at once. It uses analyst attention more efficiently by reserving human review for the cases where human judgment creates the most value. It reduces friction on clearly low-risk traffic. It makes it easier to intervene quickly on clear high-risk cases. It separates inference from governance by giving policy its own architectural place. It also makes learning more explicit by turning review outcomes into inputs for rule and model improvement.
+
+Those benefits come with costs. The architecture has more moving parts than a pure scoring service. Queue behavior must be monitored. Decision logic must be versioned and auditable. Human feedback must be structured and governed. Different teams, such as software engineers, data scientists, risk operators, and analysts, must coordinate around shared system behavior. This is precisely why the design-pattern framing is useful: it describes not only the solution, but also the costs of adopting it.
+
+Several anti-patterns follow naturally from this discussion. One is letting the score become policy, which hides governance decisions inside the model. Another is treating analysts as an unstructured exception bucket rather than as a designed workflow. A third is building the data and model side while leaving operations and interface design underspecified. A fourth is ignoring monitorability and later discovering that the team cannot explain what changed when performance shifts.
+
+## 10. Why this matters for a new, but important field
+
+A recurring idea across the literature used in this repository is that ML-enabled software architecture is still a relatively young field. The community already has important concepts such as hidden technical debt, architecture mismatch, human-in-the-loop design patterns, monitorability, architecture evaluation, and internal ML platforms. Yet reusable design knowledge is still being consolidated.
+
+Fraud prevention is a useful place to push that field forward because the stakes make the socio-technical nature of ML especially visible. In lower-stakes domains, teams can sometimes hide the surrounding architecture behind a model score or a dashboard. In fraud operations, the consequences of doing so become obvious very quickly. Decisions affect money, customer experience, investigation load, escalation paths, and organizational risk. That makes fraud a particularly revealing domain for discussing ML-enabled architecture as architecture.
+
+The design-pattern proposition developed here is therefore meant to add one more concrete example to that growing field. It is not the claim that humans-in-the-loop are novel in themselves. It is the claim that this particular combination of rules, scoring, policy, analyst review, and closed-loop feedback deserves to be documented as a reusable architectural response.
+
+## 11. Open questions
+
+Several open questions remain, and they are worth stating clearly.
+
+One open question concerns policy optimization. If scores, analyst capacity, SLA pressure, and business value all matter, what is the best way to define and adapt the routing policy over time?
+
+Another concerns feedback quality. Which analyst signals are most predictive of future system improvement, and how should disagreement between analysts be modeled? Learning-to-defer research suggests that expert heterogeneity matters; fraud operations likely add role-specific and queue-specific effects that deserve further study.
+
+A third concerns architecture evaluation. Scenario-based architecture evaluation has been discussed for ML-enabled systems, but there is still room for more domain-specific methods that explicitly test queue saturation, feature outages, delayed labels, and adversarial shifts.
+
+A fourth concerns platform productization. Many organizations still build fraud systems as collections of scripts, dashboards, and services with weak shared abstractions. Internal platform engineering for fraud and risk remains an important opportunity.
+
+## 12. Conclusion
+
+The argument of this article is that fraud prevention should be designed as an ML-enabled socio-technical architecture. Rules, machine learning, analyst work, policy, and platform support all contribute to system behavior. Robust design therefore requires more than a good classifier. It requires explicit separation between score and policy, intentional routing of ambiguous cases to experts, structured feedback loops, broad evaluation beyond accuracy, and MLOps practices that connect runtime behavior back to data, models, and policy.
+
+The resulting pattern can be summarized simply. Use rules where the organization already has explicit knowledge and guardrails. Use machine learning where prioritization and signal compression create scale. Use analysts where context and judgment matter. Keep score separate from policy. Capture feedback in a structured way. Design the surrounding platform so that the system can be observed, revised, and improved over time.
+
+That is the architecture developed in the talk and extended in this repository.
+
+## References
+
+Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S. T., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., & Horvitz, E. (2019). *Guidelines for human-AI interaction*. In **Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems**. Association for Computing Machinery. https://doi.org/10.1145/3290605.3300233
+
+Alves, J. V., Leitão, D., Jesus, S., Sampaio, M. O. P., Liébana, J., Saleiro, P., Figueiredo, M. A. T., & Bizarro, P. (2025). *A benchmarking framework and dataset for learning to defer in human-AI decision-making*. **Scientific Data, 12**, 506. https://doi.org/10.1038/s41597-025-04664-y
+
+Andersen, J., & Maalej, W. (2024). *Design Patterns for Machine Learning-Based Systems With Humans in the Loop*. **IEEE Software, 41**(4), 151-159. https://doi.org/10.1109/MS.2023.3340256
+
+Bolton, R. J., & Hand, D. J. (2002). *Statistical fraud detection: A review*. **Statistical Science, 17**(3), 235-255. https://doi.org/10.1214/ss/1042727940
+
+Chen, C., Murphy, N. R., Parisa, K., Sculley, D., & Underwood, T. (2022). *Reliable machine learning: Applying SRE principles to ML in production*. O’Reilly Media.
+
+Cruz, P., Ulloa, G., San Martin, D., & Veloz, A. (2023). *Software Architecture Evaluation of a Machine Learning Enabled System: A Case Study*. In **2023 42nd IEEE International Conference of the Chilean Computer Science Society (SCCC)**. IEEE. https://doi.org/10.1109/SCCC59417.2023.10315755
+
+Ghadermazi, J., Shah, A., & Jajodia, S. (2024). *A machine learning and optimization framework for efficient alert management in a cybersecurity operations center*. **Digital Threats: Research and Practice, 5**(2), Article 19. https://doi.org/10.1145/3644393
+
+Heiland, L., Hauser, M., & Bogner, J. (2023). *Design Patterns for AI-based Systems: A multivocal literature review and pattern repository*. In **2023 IEEE/ACM 2nd International Conference on AI Engineering - Software Engineering for AI (CAIN)**. IEEE. https://doi.org/10.1109/CAIN58948.2023.00034
+
+Hilal, W., Gadsden, S. A., & Yawney, J. (2022). *Financial fraud: A review of anomaly detection techniques and recent advances*. **Expert Systems with Applications, 193**, 116429. https://doi.org/10.1016/j.eswa.2021.116429
+
+Järvenpää, H., Lago, P., Bogner, J., Lewis, G. A., Muccini, H., & Ozkaya, I. (2024). *A synthesis of green architectural tactics for ML-enabled systems*. In **Proceedings of the 46th International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS '24)** (pp. 130-141). Association for Computing Machinery. https://doi.org/10.1145/3639475.3640111
+
+Jalalvand, F., Chhetri, M. B., Nepal, S., & Paris, C. (2024). *Alert prioritisation in security operations centres: A systematic survey on criteria and methods*. **ACM Computing Surveys, 57**(2), Article 42. https://doi.org/10.1145/3695462
+
+Kadam, P. (2024). *Enhancing financial fraud detection with human-in-the-loop feedback and feedback propagation*. In **2024 International Conference on Machine Learning and Applications (ICMLA)** (pp. 1198-1203). IEEE. https://doi.org/10.1109/ICMLA61862.2024.00185
+
+Kästner, C. (2025). *Machine learning in production: From models to products*. MIT Press.
+
+Lakshmanan, V., Robinson, S., & Munn, M. (2021). *Machine learning design patterns: Solutions to common challenges in data preparation, model building, and MLOps*. O’Reilly Media.
+
+Lewis, G. A., Bellomo, S., & Ozkaya, I. (2021). *Characterizing and detecting mismatch in machine-learning-enabled systems*. In **2021 IEEE/ACM 1st Workshop on AI Engineering - Software Engineering for AI (WAIN)** (pp. 133-140). IEEE. https://doi.org/10.1109/WAIN52551.2021.00028
+
+Lewis, G. A., Ozkaya, I., & Xu, X. (2021). *Software architecture challenges for ML systems*. In **2021 IEEE International Conference on Software Maintenance and Evolution (ICSME)** (pp. 634-638). IEEE. https://doi.org/10.1109/ICSME52107.2021.00071
+
+Lunghi, D., Simitsis, A., Caelen, O., & Bontempi, G. (2023). *Adversarial learning in real-world fraud detection: Challenges and perspectives*. In **Proceedings of the Second ACM Data Economy Workshop** (pp. 27-33). Association for Computing Machinery. https://doi.org/10.1145/3600046.3600051
+
+Muccini, H., & Vaidhyanathan, K. (2021). *Software architecture for ML-based systems: What exists and what lies ahead*. In **2021 IEEE/ACM 1st Workshop on AI Engineering - Software Engineering for AI (WAIN)** (pp. 121-128). IEEE. https://doi.org/10.1109/WAIN52551.2021.00026
+
+Nazir, R., Bucaioni, A., & Pelliccione, P. (2024). *Architecting ML-enabled systems: Challenges, best practices, and design decisions*. **Journal of Systems and Software, 207**, 111860. https://doi.org/10.1016/j.jss.2023.111860
+
+Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., & Dennison, D. (2015). *Hidden technical debt in machine learning systems*. In **Advances in Neural Information Processing Systems**, 28.
+
+Tan, B. T. W. H., Padmanabhan, S., & Mallya, V. (2026). *Machine learning platform engineering: Build an internal developer platform for ML and AI systems*. Manning.
+
+Washizaki, H., Uchida, H., Khomh, F., & Guéhéneuc, Y.-G. (2020). *Machine learning architecture and design patterns*. **IEEE Software, 37**(4), 76-84. https://doi.org/10.1109/MS.2019.2961960
