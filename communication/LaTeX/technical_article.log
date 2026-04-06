@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 11:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 12:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,7 +888,7 @@ lic/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri1
 exlive/2026/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/202
 6/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-di
 st/fonts/type1/public/lm/lmsy9.pfb>
-Output written on technical_article.pdf (25 pages, 1451760 bytes).
+Output written on technical_article.pdf (25 pages, 1451214 bytes).
 PDF statistics:
  785 PDF objects out of 1000 (max. 8388607)
  661 compressed objects within 7 object streams
