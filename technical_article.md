@@ -118,7 +118,7 @@ Figure 8 presents the same idea in a compact operational form.
 
 **Fig. 8.** Operative learning in ML-enabled HIL triage: downstream feedback should update both rules and models so that operations become a source of system learning.
 
-The virtue of Figure 8 is its simplicity. It helps emphasize that the desired endpoint is not a pipeline that stops after action, but an operating loop that learns from action.
+At its simplest, the pattern is an operating loop rather than a pipeline. The system should not end with action alone. Once outcomes are observed, feedback should flow back into both rules and models so that operations become a source of learning.
 
 Operationalization also requires a concrete analyst workbench.
 
@@ -126,7 +126,7 @@ Operationalization also requires a concrete analyst workbench.
 
 **Fig. 9.** Analyst workbench for HIL fraud triage: ranked cases, risk bands, reason codes, SLA timers, and structured feedback turn the architecture into an operational review system. Synthesized from Jalalvand et al. (2024), Ghadermazi et al. (2024), and Alves et al. (2025).
 
-Figure 9 is intentionally concrete. Alert prioritization research repeatedly highlights the importance of workload, context, skill, assignment, and review efficiency (Jalalvand et al., 2024; Ghadermazi, Shah, & Jajodia, 2024). Learning-to-defer research adds the idea that expert availability and heterogeneity matter for system performance (Alves et al., 2025). A practical analyst interface should therefore expose ranked cases, top signals, SLA pressure, action controls, and structured feedback fields. Without those elements, the architecture remains abstract and hard to operate. This is also consistent with human-AI interaction guidance, which emphasizes communicating uncertainty, supporting efficient oversight, and making intervention understandable at the point of use (Amershi et al., 2019). Industry case studies point in the same direction. Uber's Project RADAR used humans in the loop to validate and operationalize candidate fraud rules rather than treating analysts as a purely manual backup layer (Zelvenskiy et al., 2022).
+A workbench like the one shown in Fig. 9 turns the architecture into an operational review system. Alert prioritization research repeatedly highlights the importance of workload, context, skill, assignment, and review efficiency (Jalalvand et al., 2024; Ghadermazi, Shah, & Jajodia, 2024). Learning-to-defer research likewise shows that expert availability and heterogeneity matter for system performance (Alves et al., 2025). A practical analyst interface should therefore expose ranked cases, top signals, SLA pressure, action controls, and structured feedback fields. Without those elements, the architecture remains abstract and difficult to operate. This is also consistent with human-AI interaction guidance, which emphasizes communicating uncertainty, supporting efficient oversight, and making intervention understandable at the point of use (Amershi et al., 2019). Industry case studies point in the same direction. Uber's Project RADAR used humans in the loop to validate and operationalize candidate fraud rules rather than treating analysts as a purely manual backup layer (Zelvenskiy et al., 2022).
 
 ## 7. Evaluation must fit the socio-technical system
 
