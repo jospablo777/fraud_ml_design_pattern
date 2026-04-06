@@ -1,17 +1,16 @@
 # Designing fraud-prevention systems that keep analysts in the loop
 
-Welcome to the companion repository for the [Nerdearla Chile 2026](https://nerdearla.com/chile/) talk **[Fraud prevention, machine learning, and design patterns: keep your analysts in the loop](https://nerdearla.com/chile/schedule/prevencion-de-fraude-machine-learning-y-patrones-de-diseno-manten-a-tus-analistas-en-el-loop/)** by **José P. Barrantes**.
+Welcome to the companion repository for the [Nerdearla Chile 2026](https://nerdearla.com/chile/) talk **[Fraud prevention, machine learning, and design patterns: keep your analysts in the loop](https://nerdearla.com/chile/schedule/prevencion-de-fraude-machine-learning-y-patrones-de-diseno-manten-a-tus-analistas-en-el-loop/)**.
 
-This repository is a documentation-first extension of the talk. The slides introduce the main ideas in a short conference format; the README and the technical article develop those ideas with more space, more figures, and more literature. The central argument is that fraud prevention is not only a modeling problem. It is an **ML-enabled software-architecture problem** that must be solved with rules, machine learning, operational policy, platform support, and expert analysts working together.
+This repository is a documentation-first extension of the talk. The slides introduce the main ideas in a short conference format; the README and the technical article expands those ideas with more freedom and extension. The central argument is that fraud prevention is not only a modeling problem. It is an **ML-enabled software-architecture problem** that must be solved with rules, machine learning, operational policy, platform support, and expert analysts working together.
 
-In practice, robust fraud systems are neither purely manual nor purely automatic. They are hybrid socio-technical systems. Known cases can often be handled with deterministic controls. Repetitive and high-volume traffic benefits from machine-learning based prioritization. Ambiguous cases still require human judgment, contextual reading, and structured feedback. The architecture proposed here treats those three capabilities as complementary parts of one system rather than as competing alternatives.
+You can explore the material in three complementary formats:
 
-## What this repository contains
+- [Rendered web article](PENDING-LINK)
+- [Technical article (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/communication/LaTeX/technical_article.pdf)
+- [Slides / presentation (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/Nerdearla-fraud_prevention_ML_and_architecture.pdf)
 
-- `Slides_Nerdearla-fraud_prevention_ML_and_architecture.pdf`: the slide deck used in the talk.
-- `technical_article.md`: a longer article that develops the background, pattern framing, architecture, evaluation logic, and MLOps implications in much more detail.
-- `img/`: curated figures used throughout the repository.
-- `LICENSE`: licensing information for the repository contents.
+In practice, robust fraud systems are neither purely manual nor purely automatic. They are hybrid socio-technical systems. Known cases can often be handled with deterministic controls. Repetitive and high-volume traffic benefits from machine-learning based prioritization. Ambiguous cases still require human judgment, contextual reading, and structured feedback. The architecture proposed here treats those capabilities as complementary parts of one system rather than as competing alternatives.
 
 ## How to read this repository
 
