@@ -134,7 +134,7 @@ The rest of Figure~\ref{fig:planning-view} also helps clarify why ML systems mus
 \defn{\textbf{Design pattern:} A reusable solution to a recurring problem in a specific context. Specifies context, forces, solution, and consequences.}%
 The architecture discussed here is not a one-off diagram. It is proposed as a reusable response to a recurring class of problems. In design-pattern terms, that means specifying context, forces, solution, and consequences.
 
-\defn[0.8cm]{\textbf{ML architecture patterns:} Washizaki et al.\ identified 33 ML patterns. Heiland et al.\ expanded to 70 AI-system patterns.}%
+\defn[1cm]{\textbf{ML architecture patterns:} Washizaki et al.\ identified 33 ML patterns. Heiland et al.\ expanded to 70 AI-system patterns.}%
 Pattern literature for AI and ML systems is still maturing. \citet{Washizaki2020} documented recurring architecture and design patterns for machine-learning systems. \citet{Heiland2023} expanded the pattern repository for AI-based systems. \citet{Jarvenpaa2024} focused on reusable architectural tactics for ML-enabled systems. \citet{Cruz2023} reinforced the importance of architecture rationale and evaluation. Taken together, these works suggest that teams need more explicit and reusable architecture knowledge for ML-enabled systems.
 
 \defn{\textbf{HIL patterns:} Andersen \& Maalej catalog reusable HIL patterns spanning data prep, training, operation, monitoring, and explanation.}%
@@ -214,7 +214,7 @@ Analyst outcomes should feed both rule maintenance and model improvement. That m
 \defn[0.65cm]{\textbf{Open-set recognition:} Detecting cases outside any known class. Human review is most valuable at the boundary of model knowledge.}%
 Expert-in-the-loop approaches to open-set recognition suggest that human review becomes most valuable at the boundary where the model faces novelty and uncertainty rather than well understood cases \citep{Yuan2026}.
 
-\defn[1.5cm]{\textbf{Retrospective audit:} Analysts should also review samples of automatically resolved cases to catch errors and revise routing logic.}%
+\defn[1.8cm]{\textbf{Retrospective audit:} Analysts should also review samples of automatically resolved cases to catch errors and revise routing logic.}%
 The yellow return paths from automatic approval and automatic pressure to the human-analyst box make that point more explicit. Analysts should not review only the ambiguous cases routed to them in real time. They should also be able to audit samples of cases that were automatically resolved on either side, both to detect false positives and false negatives and to decide whether the underlying label, threshold, rule, or routing logic should be revised. In production, that kind of retrospective review is valuable because many important errors become visible only after deployment, when the system encounters edge cases, data drift, or changing operating conditions and teams need explicit error monitoring rather than trust in aggregate metrics alone \citep{Tan2026, Chen2022}. Structured review of automatically handled cases can then be turned into corrections or additional labels, which \citet{Andersen2024} describe as a core HIL mechanism across operation and monitoring stages. In fraud settings, \citet{Kadam2024} makes the same idea more concrete by showing that human feedback can be propagated and reused, improving robustness, recall, and performance on unseen fraud patterns rather than remaining a one-off operational intervention. When those reviewed outcomes are captured carefully, they also improve relabeling quality and strengthen future training data, especially in settings where only a subset of predictions can be manually verified \citep{Chen2022}.
 
 \begin{figure}[H]\centering
@@ -229,7 +229,7 @@ At its simplest, the pattern is an operating loop rather than a pipeline. The sy
 Operationalization also requires a concrete analyst workbench.
 
 \begin{figure}[H]\centering
-\includegraphics[width=0.75\textwidth]{analyst_queue_ui_mockup.png}
+\includegraphics[width=1.02\textwidth]{analyst_queue_ui_mockup.png}
 \caption{Analyst workbench for HIL fraud triage: ranked cases, risk bands, reason codes, SLA timers, and structured feedback turn the architecture into an operational review system. Synthesized from \citet{Jalalvand2024}, \citet{Ghadermazi2024}, and \citet{Alves2025}.}
 \label{fig:analyst-workbench}
 \end{figure}
@@ -277,7 +277,7 @@ The pattern does not end at runtime routing. It has an operational lifecycle in 
 
 The side loops are the most important part of the diagram, because they show why feedback should not be collapsed into a single retraining arrow. Some signals should improve the dataset or feature pipeline, some should drive model improvement, and some should revise rules, thresholds, or routing policy. Data and feature plumbing are part of that same architectural story. \citet{Lin2013} describe this broader production problem as one of workflows, recurring jobs, and infrastructure plumbing, where value depends not only on mining algorithms but on the systems that make large-scale analysis repeatable and operable. \citet{Konieczny2025} documents recurring data-engineering patterns for dependable ingestion, transformation, lineage, and pipeline quality, and those concerns map directly onto the data-capture and feature-generation stages shown here. \citet{MosqueiraRey2023} help explain why the diagram contains more than one return path: in HIL systems, human intervention may serve different roles, from annotation to interactive steering to teaching, so collapsing all feedback into retraining would hide important design distinctions.
 
-\defn[-2cm]{\textbf{Monitorability:} First-class quality attribute for ML systems. Separate monitoring for data quality, model quality, service health, and queue health.}%
+\defn[0.5cm]{\textbf{Monitorability:} First-class quality attribute for ML systems. Separate monitoring for data quality, model quality, service health, and queue health.}%
 This is consistent with the literature. \citet{Lewis2021Challenges} emphasize monitorability, maintenance, and evolution. \citet{Lewis2021Mismatch} discuss mismatch between assumptions made by different roles and system parts. \citet{Tan2026} frame platform support as an important way to reduce accidental complexity and create repeatable paths for deployment, observability, and governance. \citet{Kadam2024} brings the fraud-specific feedback loop into that broader lifecycle.
 
 \defn[0.5cm]{\textbf{ML platform:} Versioning, feature store, model registry, observability, governance. Reduces accidental complexity across teams.}%
