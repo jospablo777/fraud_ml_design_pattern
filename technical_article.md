@@ -1,5 +1,5 @@
 # Designing fraud-prevention systems that keep analysts in the loop
-### A technical article extending the Nerdearla Chile 2026 talk
+### A technical article extending the Nerdearla Chile 2026 [talk](https://nerdearla.com/chile/schedule/prevencion-de-fraude-machine-learning-y-patrones-de-diseno-manten-a-tus-analistas-en-el-loop/)
 
 ## Abstract
 
@@ -13,13 +13,13 @@ The conference talk that accompanies this repository was intentionally concise. 
 
 The central thesis is straightforward: robust fraud-prevention systems are hybrid systems. They rarely succeed as purely manual workflows, because the volume of traffic and the speed of attack make full manual review infeasible. They also rarely succeed as purely automatic systems, because high-stakes decisions must account for ambiguity, changing attacker behavior, incomplete labels, asymmetric costs, and governance constraints. The most resilient architecture combines deterministic controls, statistical scoring, decision policy, and expert human judgment.
 
-That claim is not merely organizational. It is architectural. Production machine-learning systems already require supporting software, data pipelines, monitoring, deployment structures, and cross-functional engineering practices (Sculley et al., 2015; Amershi et al., 2019; Lewis, Ozkaya, & Xu, 2021; Nazir, Bucaioni, & Pelliccione, 2024). In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not the model in isolation; it is the full socio-technical system that converts signals into actions.
+That claim is not merely organizational. It is architectural. Production machine-learning systems already require supporting software, data pipelines, monitoring, deployment structures, and cross-functional engineering practices (Sculley et al., 2015; Amershi et al., 2019; Lewis, Ozkaya, & Xu, 2021; Nazir, Bucaioni, & Pelliccione, 2024). In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not the model in isolation; it is the full socio-technical system that converts signals into actions (Fig. 1).
 
 ![Fig. 1. A conceptual overview of the pattern: effective fraud systems are built from the interaction of rules, machine learning, and expert analysts rather than any one component in isolation.](img/fraud_system_three_pillars.png)
 
 **Fig. 1.** A conceptual overview of the pattern: effective fraud systems are built from the interaction of rules, machine learning, and expert analysts rather than any one component in isolation.
 
-Figure 1 captures the argument in its simplest form. Fraud systems benefit from three complementary capabilities. Rules encode explicit knowledge and guardrails. Machine learning compresses heterogeneous signals into scores or rankings. Analysts contribute judgment, novelty detection, and feedback. The point of the pattern is not to declare one of those capabilities superior; it is to design their interaction well.
+Here (Fig. 1), we capture the argument in its simplest form. Fraud systems benefit from three complementary capabilities. Rules encode explicit knowledge and guardrails. Machine learning compresses heterogeneous signals into scores or rankings. Analysts contribute judgment, novelty detection, and feedback. The point of the pattern is not to declare one of those capabilities superior; it is to design their interaction well.
 
 ## 2. Why fraud prevention becomes an architecture problem
 
@@ -37,7 +37,7 @@ These properties help explain why the literature on ML-enabled software systems 
 
 ## 3. From hidden technical debt to ML-enabled fraud systems
 
-Sculley et al. (2015) famously argued that much of the real cost of ML systems lies outside the model itself. Data dependencies, feature extraction, configuration, serving, monitoring, and process tooling all create hidden technical debt. That insight is especially powerful in fraud prevention because it helps expose a misleading simplification: a fraud model is never the whole fraud system.
+Sculley et al. (2015) famously argued that much of the real cost of ML systems lies outside the model itself. Data dependencies, feature extraction, configuration, serving, monitoring, and process tooling all create hidden technical debt (Fig. 2). That insight is especially powerful in fraud prevention because it helps expose a misleading simplification: a fraud model is never the whole fraud system.
 
 ![Fig. 2. System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)](img/system_anatomy.png)
 
