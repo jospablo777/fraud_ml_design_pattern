@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 04:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  6 APR 2026 04:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -568,13 +568,13 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 53--54
 [][][] 
  []
 
-Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 60
+Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 59
 .
-Package marginnote Info: right page because not two side mode on input line 60.
+Package marginnote Info: right page because not two side mode on input line 59.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 60.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-0.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 59.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 5
+9.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -583,12 +583,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 60.
-Package marginnote Info: Margin note 1.2 is on absolute page 1 on input line 63
+(Font)              <9> on input line 59.
+Package marginnote Info: Margin note 1.2 is on absolute page 1 on input line 62
 .
-Package marginnote Info: right page because not two side mode on input line 63.
+Package marginnote Info: right page because not two side mode on input line 62.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 63.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 62.
 <../../img/fraud_system_three_pillars.png, id=73, 720.44156pt x 666.23906pt>
 File: ../../img/fraud_system_three_pillars.png Graphic file (type png)
 <use ../../img/fraud_system_three_pillars.png>
@@ -599,31 +599,31 @@ t line 66.
 local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Package marginnote Info: Margin note 2.1 is on absolute page 2 on input line 78
+Package marginnote Info: Margin note 2.1 is on absolute page 2 on input line 77
 .
-Package marginnote Info: right page because not two side mode on input line 78.
+Package marginnote Info: right page because not two side mode on input line 77.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 78.
-Package marginnote Info: Margin note 2.2 is on absolute page 2 on input line 81
+Package marginnote Info: xpos seems to be 71.13188pt on input line 77.
+Package marginnote Info: Margin note 2.2 is on absolute page 2 on input line 80
 .
-Package marginnote Info: right page because not two side mode on input line 81.
+Package marginnote Info: right page because not two side mode on input line 80.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 81.
-Package marginnote Info: Margin note 2.3 is on absolute page 2 on input line 84
+Package marginnote Info: xpos seems to be 71.13188pt on input line 80.
+Package marginnote Info: Margin note 2.3 is on absolute page 2 on input line 83
 .
-Package marginnote Info: right page because not two side mode on input line 84.
+Package marginnote Info: right page because not two side mode on input line 83.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 84.
-Package marginnote Info: Margin note 2.4 is on absolute page 2 on input line 87
+Package marginnote Info: xpos seems to be 71.13188pt on input line 83.
+Package marginnote Info: Margin note 2.4 is on absolute page 2 on input line 86
 .
-Package marginnote Info: right page because not two side mode on input line 87.
+Package marginnote Info: right page because not two side mode on input line 86.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 87.
-Package marginnote Info: Margin note 2.5 is on absolute page 3 on input line 94
+Package marginnote Info: xpos seems to be 71.13188pt on input line 86.
+Package marginnote Info: Margin note 2.5 is on absolute page 3 on input line 93
 .
-Package marginnote Info: right page because not two side mode on input line 94.
+Package marginnote Info: right page because not two side mode on input line 93.
 
-Package marginnote Info: xpos seems to be 71.13188pt on input line 94.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 93.
  [2 <../../img/fraud_system_three_pillars.png>]
 <../../img/system_anatomy.png, id=143, 595.2639pt x 227.4096pt>
 File: ../../img/system_anatomy.png Graphic file (type png)
@@ -638,40 +638,40 @@ Package pdftex.def Info: ../../img/ml_enabled_system_architecture.png  used on
 input line 105.
 (pdftex.def)             Requested size: 277.41438pt x 220.91397pt.
 Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 11
+0.
+Package marginnote Info: right page because not two side mode on input line 110
+.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 110.
+Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 11
 1.
 Package marginnote Info: right page because not two side mode on input line 111
 .
 Package marginnote Info: xpos seems to be 71.13188pt on input line 111.
-Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 11
-2.
-Package marginnote Info: right page because not two side mode on input line 112
-.
-Package marginnote Info: xpos seems to be 71.13188pt on input line 112.
 Package marginnote Info: Margin note 3.3 is on absolute page 3 on input line 11
-7.
-Package marginnote Info: right page because not two side mode on input line 117
+6.
+Package marginnote Info: right page because not two side mode on input line 116
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 117.
-Package marginnote Info: Margin note 3.4 is on absolute page 3 on input line 12
-0.
-Package marginnote Info: right page because not two side mode on input line 120
+Package marginnote Info: xpos seems to be 71.13188pt on input line 116.
+Package marginnote Info: Margin note 3.4 is on absolute page 3 on input line 11
+9.
+Package marginnote Info: right page because not two side mode on input line 119
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 120.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 119.
 
 [3 <../../img/system_anatomy.png> <../../img/ml_enabled_system_architecture.png
 >]
 Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 12
-3.
-Package marginnote Info: right page because not two side mode on input line 123
+2.
+Package marginnote Info: right page because not two side mode on input line 122
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 123.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 122.
 Package marginnote Info: Margin note 4.2 is on absolute page 4 on input line 12
-6.
-Package marginnote Info: right page because not two side mode on input line 126
+5.
+Package marginnote Info: right page because not two side mode on input line 125
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 126.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 125.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 125.
 <../../img/pattern_context_forces_consequences.png, id=192, 729.47531pt x 813.0
 375pt>
 File: ../../img/pattern_context_forces_consequences.png Graphic file (type png)
@@ -681,10 +681,10 @@ Package pdftex.def Info: ../../img/pattern_context_forces_consequences.png  use
 d on input line 129.
 (pdftex.def)             Requested size: 240.42354pt x 267.95584pt.
 Package marginnote Info: Margin note 4.3 is on absolute page 4 on input line 13
-9.
-Package marginnote Info: right page because not two side mode on input line 139
+8.
+Package marginnote Info: right page because not two side mode on input line 138
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 139.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 138.
 <../../img/score_policy_action.png, id=216, 1160.83687pt x 345.54094pt>
 File: ../../img/score_policy_action.png Graphic file (type png)
 <use ../../img/score_policy_action.png>
@@ -693,11 +693,11 @@ Package pdftex.def Info: ../../img/score_policy_action.png  used on input line
 (pdftex.def)             Requested size: 240.42354pt x 71.56395pt.
  [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../../img
 /pattern_context_forces_consequences.png> <../../img/score_policy_action.png>]
-Package marginnote Info: Margin note 5.1 is on absolute page 5 on input line 15
-0.
-Package marginnote Info: right page because not two side mode on input line 150
+Package marginnote Info: Margin note 5.1 is on absolute page 5 on input line 14
+9.
+Package marginnote Info: right page because not two side mode on input line 149
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 150.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 149.
 <../../img/hil_triage_reference_architecture.png, id=238, 1100.61188pt x 725.71
 124pt>
 File: ../../img/hil_triage_reference_architecture.png Graphic file (type png)
@@ -706,10 +706,10 @@ Package pdftex.def Info: ../../img/hil_triage_reference_architecture.png  used
 on input line 152.
 (pdftex.def)             Requested size: 277.41438pt x 182.91121pt.
 Package marginnote Info: Margin note 5.2 is on absolute page 5 on input line 16
-2.
-Package marginnote Info: right page because not two side mode on input line 162
+1.
+Package marginnote Info: right page because not two side mode on input line 161
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 162.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 161.
 <../../img/bidirectional_human_ml_collaboration.png, id=242, 721.94719pt x 736.
 25063pt>
 File: ../../img/bidirectional_human_ml_collaboration.png Graphic file (type png
@@ -728,20 +728,20 @@ n input line 173.
  [5 <../../img/hil_triage_reference_architecture.png> <../../img/bidirectional_
 human_ml_collaboration.png>]
 Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 17
-9.
-Package marginnote Info: right page because not two side mode on input line 179
+8.
+Package marginnote Info: right page because not two side mode on input line 178
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 179.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 178.
 Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 18
-2.
-Package marginnote Info: right page because not two side mode on input line 182
+1.
+Package marginnote Info: right page because not two side mode on input line 181
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 182.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 181.
 Package marginnote Info: Margin note 6.3 is on absolute page 6 on input line 18
-5.
-Package marginnote Info: right page because not two side mode on input line 185
+4.
+Package marginnote Info: right page because not two side mode on input line 184
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 185.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 184.
 <../../img/operative_learning.png, id=272, 1445.4pt x 408.77719pt>
 File: ../../img/operative_learning.png Graphic file (type png)
 <use ../../img/operative_learning.png>
@@ -749,10 +749,10 @@ Package pdftex.def Info: ../../img/operative_learning.png  used on input line 1
 88.
 (pdftex.def)             Requested size: 277.41438pt x 78.45438pt.
 Package marginnote Info: Margin note 6.4 is on absolute page 6 on input line 19
-4.
-Package marginnote Info: right page because not two side mode on input line 194
+3.
+Package marginnote Info: right page because not two side mode on input line 193
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 194.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 193.
 <../../img/analyst_queue_ui_mockup.png, id=273, 224.7597pt x 153.2124pt>
 File: ../../img/analyst_queue_ui_mockup.png Graphic file (type png)
 <use ../../img/analyst_queue_ui_mockup.png>
@@ -762,10 +762,10 @@ ine 196.
  [6 <../../img/hil_triage_feedback_architecture.png> <../../img/operative_learn
 ing.png> <../../img/analyst_queue_ui_mockup.png>]
 Package marginnote Info: Margin note 7.1 is on absolute page 7 on input line 20
-6.
-Package marginnote Info: right page because not two side mode on input line 206
+5.
+Package marginnote Info: right page because not two side mode on input line 205
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 206.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 205.
 <../../img/metrics_and_tradeoffs_framework.png, id=320, 975.645pt x 813.0375pt>
 
 File: ../../img/metrics_and_tradeoffs_framework.png Graphic file (type png)
@@ -774,25 +774,25 @@ Package pdftex.def Info: ../../img/metrics_and_tradeoffs_framework.png  used on
  input line 209.
 (pdftex.def)             Requested size: 277.41438pt x 231.17223pt.
 Package marginnote Info: Margin note 7.2 is on absolute page 7 on input line 21
+4.
+Package marginnote Info: right page because not two side mode on input line 214
+.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 214.
+Package marginnote Info: Margin note 7.3 is on absolute page 7 on input line 21
 5.
 Package marginnote Info: right page because not two side mode on input line 215
 .
 Package marginnote Info: xpos seems to be 71.13188pt on input line 215.
-Package marginnote Info: Margin note 7.3 is on absolute page 7 on input line 21
-6.
-Package marginnote Info: right page because not two side mode on input line 216
-.
-Package marginnote Info: xpos seems to be 71.13188pt on input line 216.
 Package marginnote Info: Margin note 7.4 is on absolute page 7 on input line 21
-9.
-Package marginnote Info: right page because not two side mode on input line 219
+8.
+Package marginnote Info: right page because not two side mode on input line 218
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 219.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 218.
 Package marginnote Info: Margin note 7.5 is on absolute page 7 on input line 22
-4.
-Package marginnote Info: right page because not two side mode on input line 224
+3.
+Package marginnote Info: right page because not two side mode on input line 223
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 224.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 223.
 <../../img/mlops_feedback_lifecycle.png, id=356, 657.2053pt x 813.0375pt>
 File: ../../img/mlops_feedback_lifecycle.png Graphic file (type png)
 <use ../../img/mlops_feedback_lifecycle.png>
@@ -803,31 +803,31 @@ line 227.
 [7{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <../../
 img/metrics_and_tradeoffs_framework.png>]
 Package marginnote Info: Margin note 8.1 is on absolute page 8 on input line 23
-3.
-Package marginnote Info: right page because not two side mode on input line 233
+2.
+Package marginnote Info: right page because not two side mode on input line 232
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 233.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 232.
 Package marginnote Info: Margin note 8.2 is on absolute page 8 on input line 23
-6.
-Package marginnote Info: right page because not two side mode on input line 236
-.
-Package marginnote Info: xpos seems to be 71.13188pt on input line 236.
-Package marginnote Info: Margin note 8.3 is on absolute page 8 on input line 24
 5.
-Package marginnote Info: right page because not two side mode on input line 245
+Package marginnote Info: right page because not two side mode on input line 235
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 245.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 235.
+Package marginnote Info: Margin note 8.3 is on absolute page 8 on input line 24
+4.
+Package marginnote Info: right page because not two side mode on input line 244
+.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 244.
 Package marginnote Info: Margin note 8.4 is on absolute page 9 on input line 24
-8.
-Package marginnote Info: right page because not two side mode on input line 248
+7.
+Package marginnote Info: right page because not two side mode on input line 247
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 248.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 247.
  [8 <../../img/mlops_feedback_lifecycle.png>]
 Package marginnote Info: Margin note 9.1 is on absolute page 9 on input line 25
-5.
-Package marginnote Info: right page because not two side mode on input line 255
+4.
+Package marginnote Info: right page because not two side mode on input line 254
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 255.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 254.
 
 Overfull \hbox (9.10065pt too wide) in paragraph at lines 257--257
 |[]\T1/lmr/bx/n/14.4 (-20) Why this mat-ters for a new, but im-por-tant field| 
@@ -835,10 +835,10 @@ Overfull \hbox (9.10065pt too wide) in paragraph at lines 257--257
  []
 
 Package marginnote Info: Margin note 9.2 is on absolute page 9 on input line 26
-6.
-Package marginnote Info: right page because not two side mode on input line 266
+5.
+Package marginnote Info: right page because not two side mode on input line 265
 .
-Package marginnote Info: xpos seems to be 71.13188pt on input line 266.
+Package marginnote Info: xpos seems to be 71.13188pt on input line 265.
 (./technical_article.bbl [9] [10] [11] [12]
 Underfull \hbox (badness 1052) in paragraph at lines 272--278
 \T1/lmr/m/n/10.95 (+20) loop.  Uber Blog, 2022.  URL [][]$https : / / www . ube
@@ -854,10 +854,10 @@ Package rerunfilecheck Info: File `technical_article.out' has not changed.
 (rerunfilecheck)             Checksum: FD876A7FA64B3910B1860B9FA61BE650;3453.
  ) 
 Here is how much of TeX's memory you used:
- 15321 strings out of 467525
- 250550 string characters out of 5418983
- 720388 words of memory out of 5000000
- 43715 multiletter control sequences out of 15000+600000
+ 15322 strings out of 467525
+ 250555 string characters out of 5418983
+ 720416 words of memory out of 5000000
+ 43716 multiletter control sequences out of 15000+600000
  719021 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,13n,84p,1206b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -870,7 +870,7 @@ blic/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lm
 ss10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/lo
 cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on technical_article.pdf (13 pages, 1389826 bytes).
+Output written on technical_article.pdf (13 pages, 1389815 bytes).
 PDF statistics:
  612 PDF objects out of 1000 (max. 8388607)
  516 compressed objects within 6 object streams

@@ -13,7 +13,7 @@
 \definecolor{rulegray}{HTML}{BDC3C7}
 \usepackage{marginnote}
 \renewcommand*{\marginfont}{\footnotesize\sffamily}
-\newcommand{\defn}[1]{\marginnote{\fcolorbox{accentteal!30}{accentteal!6}{\parbox{3.5cm}{\raggedright\small\sffamily\color{accentteal}#1}}}}
+\newcommand{\defn}[2][0pt]{\marginnote{\fcolorbox{accentteal!30}{accentteal!6}{\parbox{3.5cm}{\raggedright\small\sffamily\color{accentteal}\vspace{2pt}#2\vspace{2pt}}}}[#1]}
 \usepackage{titlesec}
 \titleformat{\section}{\Large\bfseries\color{darkgray}}{\thesection}{0.6em}{}
 \titleformat{\subsection}{\large\bfseries\color{darkgray}}{\thesubsection}{0.5em}{}
@@ -77,13 +77,13 @@ Fraud prevention is not a stable prediction problem. Systems combine rules, supe
 \defn{\textbf{Adversarial adaptation:} Fraudsters change tactics once a defense becomes known, making detection a moving contest.}%
 First, attackers adapt \citep{Bolton2002, Carcillo2021, Lunghi2023}.
 
-\defn{\textbf{Label delay:} Ground truth is often confirmed only after complaints or investigations---incomplete at decision time.}%
+\defn[0.2cm]{\textbf{Label delay:} Ground truth is often confirmed only after complaints or investigations---incomplete at decision time.}%
 Second, labels are delayed and imperfect \citep{Carcillo2021, Lunghi2023}. The system acts inside the environment that later generates its own labels.
 
-\defn{\textbf{Asymmetric error costs:} False negatives cause direct loss; false positives cause friction. Not interchangeable.}%
+\defn[0.2cm]{\textbf{Asymmetric error costs:} False negatives cause direct loss; false positives cause friction. Not interchangeable.}%
 Third, error costs are asymmetric \citep{Bolton2002, HernandezAros2024}.
 
-\defn{\textbf{Time sensitivity:} A correct decision made too late may still be operationally poor.}%
+\defn[0.2cm]{\textbf{Time sensitivity:} A correct decision made too late may still be operationally poor.}%
 Fourth, many decisions are time-sensitive \citep{Bolton2002, Lunghi2023, Carcillo2021}. Architecture determines which cases are handled automatically and how scarce analyst attention is reserved for the ambiguous zone.
 
 These properties explain the move toward system-centric and architecture-centric thinking \citep{Muccini2021, Lewis2021Challenges, Nazir2024}.
