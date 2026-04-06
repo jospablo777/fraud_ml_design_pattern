@@ -90,7 +90,7 @@ That loop becomes even clearer when feedback is represented explicitly inside th
 
 As seen in Fig. 7, structured feedback matters. A review queue should not end with a manual decision that disappears into narrative notes. Analyst outcomes can improve rules, thresholds, features, labels, and model behavior if they are captured in a disciplined way.
 
-Figure 8 condenses that idea into an operational-learning view. It is simpler than the reference architecture, but useful for explaining the core improvement loop to readers who want the shortest possible visual summary.
+Figure 8 condenses that idea into an operational-learning view. It is simpler than the reference architecture, but explains the core improvement loop to readers who want the shortest possible visual summary.
 
 ![Fig. 8. Operative learning in ML-enabled HIL triage: downstream feedback should update both rules and models so that operations become a source of system learning.](img/operative_learning.png)
 
@@ -116,23 +116,23 @@ Figure 10 is meant to correct a common modeling bias. The production objective i
 
 ## Connect architecture to MLOps and platform engineering
 
-The pattern also has a lifecycle. Production fraud systems need monitoring, versioning, deployment discipline, data curation, retraining logic, policy revision, and observability. The same signals that help analysts work better should also help the organization improve data, models, and operational logic over time.
+The pattern also has a lifecycle. Production fraud systems need monitoring, versioning, deployment discipline, data curation, retraining logic, policy revision, and observability. The same signals that help analysts work better should also help the organization improve data, models, and operational logic over time (Fig. 11).
 
 ![Fig. 11. MLOps feedback lifecycle for ML-enabled HIL fraud systems: runtime monitoring and analyst feedback support data curation, model improvement, and policy revision. Adapted from Lewis, Ozkaya, & Xu (2021), extended with platform-engineering concepts from Tan, Padmanabhan, & Mallya (2026), and specialized for fraud feedback loops using Kadam (2024).](img/mlops_feedback_lifecycle.png)
 
 **Fig. 11.** MLOps feedback lifecycle for ML-enabled HIL fraud systems: runtime monitoring and analyst feedback support data curation, model improvement, and policy revision. Adapted from Lewis, Ozkaya, & Xu (2021), extended with platform-engineering concepts from Tan, Padmanabhan, & Mallya (2026), and specialized for fraud feedback loops using Kadam (2024).
 
-Figure 11 connects the runtime architecture back to platform engineering. Fraud systems are not maintained only through model retraining. They also improve through relabeling, feature fixes, threshold changes, routing changes, and governance-aware revision of policy.
+Here, we connect the runtime architecture back to platform engineering. Fraud systems are not maintained only through model retraining. They also improve through relabeling, feature fixes, threshold changes, routing changes, and governance-aware revision of policy.
 
 ## Why describe this as a design pattern
 
-The repository does not present a one-off diagram for one specific implementation. It proposes a reusable architectural response to a recurring problem: how to make fast fraud decisions without losing judgment where it matters. The pattern language view is useful because it makes explicit the **context**, the **forces in tension**, the **solution**, and the **consequences**.
+The repository does not present a one-off diagram for one specific implementation. It proposes a reusable architectural response to a recurring problem: how to make fast fraud decisions without losing judgment where it matters. The pattern language view is useful because it makes explicit the **context**, the **forces in tension**, the **solution**, and the **consequences**. We make the design-pattern claim explicit in Fig. 12.
 
 ![Fig. 12. Pattern framing for ML-enabled human-in-the-loop fraud triage: context, forces, reusable solution, consequences, and related lineage. Synthesized from Lakshmanan, Robinson, & Munn (2020), Heiland et al. (2023), Cruz et al. (2023), and Järvenpää et al. (2024).](img/pattern_context_forces_consequences.png)
 
 **Fig. 12.** Pattern framing for ML-enabled human-in-the-loop fraud triage: context, forces, reusable solution, consequences, and related lineage. Synthesized from Lakshmanan, Robinson, & Munn (2020), Heiland et al. (2023), Cruz et al. (2023), and Järvenpää et al. (2024).
 
-Figure 12 makes the design-pattern claim explicit. The proposed architecture responds to recurring tensions: speed versus caution, fraud capture versus customer friction, autonomy versus control, and expertise versus capacity. It offers clear benefits, but it also creates costs in complexity, traceability, calibration, and organizational coordination. Treating those trade-offs openly is one reason the pattern framing is valuable.
+The proposed architecture responds to recurring tensions: speed versus caution, fraud capture versus customer friction, autonomy versus control, and expertise versus capacity. It offers clear benefits, but it also creates costs in complexity, traceability, calibration, and organizational coordination. Treating those trade-offs openly is one reason the pattern framing is valuable.
 
 ## Why this matters for ML-enabled software architecture
 
