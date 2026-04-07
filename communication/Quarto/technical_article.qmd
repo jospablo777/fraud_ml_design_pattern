@@ -25,9 +25,9 @@ GitHub Repo: [Fraud System Architecture](https://github.com/jospablo777/fraud_ml
 
 ## Abstract {.unnumbered}
 
-This article extends the Nerdearla Chile 2026 talk "Fraud prevention, machine learning, and design patterns: keep your analysts in the loop." Fraud prevention should be treated as an **ML-enabled software-architecture problem**, not only as a classification problem. In real operations, rules, machine learning, operational policy, analyst work, and platform engineering all shape outcomes. Looking only at model performance hides the socio-technical nature of the system.
+Here we extend the Nerdearla Chile 2026 talk "Fraud prevention, machine learning, and design patterns: keep your analysts in the loop." Fraud prevention should be treated as an **ML-enabled software-architecture problem**, not only as a classification problem. In real operations, rules, machine learning, operational policy, analyst work, and platform engineering all shape outcomes. Looking only at model performance hides the socio-technical nature of the system.
 
-The article develops a design-pattern proposition for **ML-enabled Human-in-the-Loop (HIL) Triage**. The proposed pattern uses rules for explicit cases, machine learning for scoring and prioritization, policy for routing and action selection, and expert analysts for ambiguous cases and structured feedback. The discussion connects this architecture to the literature on software architecture for ML systems, human-in-the-loop design, design patterns for AI-based systems, learning to defer, alert prioritization, reliable machine learning, and platform engineering. More broadly, the article situates the proposal within the wider human-in-the-loop machine-learning literature, where humans may participate as reviewers, collaborators, or teachers rather than only as post hoc annotators [@MosqueiraRey2023].
+We develop a design-pattern proposition for **ML-enabled Human-in-the-Loop (HIL) Triage**. The proposed pattern uses rules for explicit cases, machine learning for scoring and prioritization, policy for routing and action selection, and expert analysts for ambiguous cases and structured feedback. The discussion connects this architecture to the literature on software architecture for ML systems, human-in-the-loop design, design patterns for AI-based systems, learning to defer, alert prioritization, reliable machine learning, and platform engineering. More broadly, we situate the proposal within the wider human-in-the-loop machine-learning literature, where humans may participate as reviewers, collaborators, or teachers rather than only as post hoc annotators [@MosqueiraRey2023].
 
 ## Introduction
 
@@ -92,7 +92,7 @@ The rest of @fig-planning-view also helps clarify why ML systems must be planned
 [^coversioning]: **Co-versioning:** Data, features, models, evaluation artifacts, and policy thresholds should be traceable together so post-incident analysis can reconstruct the full decision state.
 
 
-## Why this article proposes a design pattern {#sec-pattern}
+## Why we propose a design pattern {#sec-pattern}
 
 The architecture discussed here is not a one-off diagram[^designpattern]. It is proposed as a reusable response to a recurring class of problems. In design-pattern terms, that means specifying context, forces, solution, and consequences.
 
@@ -267,11 +267,11 @@ A fifth open question concerns the role of large language models and generative 
 
 ## Conclusion
 
-This article has argued that fraud prevention should be designed as an ML-enabled socio-technical architecture. System behavior is produced not by the model alone, but by the interaction of rules, machine learning, analyst work, policy, and platform support. Robust design therefore requires more than a strong classifier. It requires explicit separation between score and policy, deliberate routing of ambiguous cases to expert review, structured feedback loops, evaluation that extends beyond accuracy, and operational practices that connect runtime behavior back to data, models, and policy.
+Here we argued that fraud prevention should be designed as an ML-enabled socio-technical architecture. System behavior is produced not by the model alone, but by the interaction of rules, machine learning, analyst work, policy, and platform support. Robust design therefore requires more than a strong classifier. It requires explicit separation between score and policy, deliberate routing of ambiguous cases to expert review, structured feedback loops, evaluation that extends beyond accuracy, and operational practices that connect runtime behavior back to data, models, and policy.
 
 The proposed pattern can be stated simply. Use rules where the organization already has explicit knowledge and firm guardrails. Use machine learning where prioritization and signal compression create scale. Use analysts where context, exception handling, and judgment matter. Keep score separate from policy. Capture feedback in a structured form. Design the surrounding platform so that the system can be observed, revised, and improved over time.
 
-More broadly, the point is not only that fraud systems need humans in the loop. It is that this combination of rules, scoring, policy, analyst review, and closed-loop learning deserves to be treated as a reusable architectural response for a high-stakes domain. That is the argument presented in the talk and developed in greater depth in this article.
+More broadly, the point is not only that fraud systems need humans in the loop. It is that this combination of rules, scoring, policy, analyst review, and closed-loop learning deserves to be treated as a reusable architectural response for a high-stakes domain. That is the argument presented in the talk and developed in greater depth in here.
 
 
 ## Contact {.unnumbered}
