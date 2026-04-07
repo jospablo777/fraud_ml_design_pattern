@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex technical_article"] 1775505281.73192 "technical_article.aux" "technical_article.bbl" "technical_article" 1775505764.8458 0
+["bibtex technical_article"] 1775505281.73192 "technical_article.aux" "technical_article.bbl" "technical_article" 1775536590.70107 0
   "./references.bib" 1775469454.26366 12998 91e21b06e91e1daf2f18f9ae9d95ceaa ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "technical_article.aux" 1775505764.65718 17647 0cbba6ee8e156202b9ae071fc7d123a5 "pdflatex"
+  "technical_article.aux" 1775536590.49096 17647 0cbba6ee8e156202b9ae071fc7d123a5 "pdflatex"
   (generated)
   "technical_article.bbl"
   "technical_article.blg"
   (rewritten before read)
-["pdflatex"] 1775505763.06942 "/Users/josep/Documents/Machine Learning/Projects/fraud_ml_design_pattern/communication/LaTeX/technical_article.tex" "technical_article.pdf" "technical_article" 1775505764.84592 0
+["pdflatex"] 1775536588.87099 "/Users/josep/Documents/Machine Learning/Projects/fraud_ml_design_pattern/communication/LaTeX/technical_article.tex" "technical_article.pdf" "technical_article" 1775536590.70119 0
   "../../img/analyst_queue_ui_mockup.png" 1775441197.57837 100099 d1b5450f704665a42a743d9d2f3b6c8a ""
   "../../img/bidirectional_human_ml_collaboration.png" 1775431321.59578 94415 c5282f41e5c868909fae60c44bd6fca3 ""
   "../../img/fraud_system_three_pillars.png" 1775500739.53819 96075 caacf2c89046fb5ba029e9bcbb8012d0 ""
@@ -21,7 +21,7 @@
   "../../img/pattern_context_forces_consequences.png" 1775441077.29561 133089 832f1da0ad7a4408910858d2830ba3ec ""
   "../../img/score_policy_action.png" 1775495166.66056 59976 3a81a1eb6704e08f2e34d35298751831 ""
   "../../img/system_anatomy.png" 1775429376.26561 203566 65472b35eaa2c9d8b7df6c2584326a99 ""
-  "/Users/josep/Documents/Machine Learning/Projects/fraud_ml_design_pattern/communication/LaTeX/technical_article.tex" 1775505762.88622 58162 5d6779ac076efcb431e26fd9bda74abb ""
+  "/Users/josep/Documents/Machine Learning/Projects/fraud_ml_design_pattern/communication/LaTeX/technical_article.tex" 1775536588.58938 58139 f5372e364e4fee753004cba54c160c91 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -139,10 +139,10 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1774323275 5541377 04880c840ca220163a28f1a3af0ee662 ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "technical_article.aux" 1775505764.65718 17647 0cbba6ee8e156202b9ae071fc7d123a5 "pdflatex"
-  "technical_article.bbl" 1775505281.80834 9833 82adab1bddb18064fec42e1ce309ff58 "bibtex technical_article"
-  "technical_article.out" 1775505764.65816 3453 fd876a7fa64b3910b1860b9fa61be650 "pdflatex"
-  "technical_article.tex" 1775505762.88622 58162 5d6779ac076efcb431e26fd9bda74abb ""
+  "technical_article.aux" 1775536590.49096 17647 0cbba6ee8e156202b9ae071fc7d123a5 "pdflatex"
+  "technical_article.bbl" 1775505820.30259 9929 7bf300b68f736adcc29799a858083ed8 "bibtex technical_article"
+  "technical_article.out" 1775536590.49195 3453 fd876a7fa64b3910b1860b9fa61be650 "pdflatex"
+  "technical_article.tex" 1775536588.58938 58139 f5372e364e4fee753004cba54c160c91 ""
   (generated)
   "technical_article.aux"
   "technical_article.log"
