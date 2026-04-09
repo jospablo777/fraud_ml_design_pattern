@@ -6,7 +6,7 @@ This repository is a documentation-first extension of the talk. The slides intro
 
 You can explore the material in three complementary formats:
 
-- [Rendered web article](https://jospablo777.github.io/fraud_ml_design_pattern/technical_article.html)
+- [Web article](https://jospablo777.github.io/fraud_ml_design_pattern/technical_article.html)
 - [Technical article (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/communication/LaTeX/technical_article.pdf)
 - [Slides / presentation (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/Nerdearla-fraud_prevention_ML_and_architecture.pdf)
 
