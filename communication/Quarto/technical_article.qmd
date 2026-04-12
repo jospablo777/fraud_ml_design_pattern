@@ -87,7 +87,7 @@ We broaden the lens from runtime anatomy to planning in @fig-planning-view[^coar
 
 [^coarchitecting]: **Co-architecting:** The runtime system and the model-development pipeline should be designed together, not as disconnected work streams.
 
-The rest of @fig-planning-view also helps clarify why ML systems must be planned as products rather than isolated models[^coversioning]. The traditional component lane represents APIs, business logic, integrations, and interfaces. The ML lane represents model requirements, data engineering, model development, and quality assurance, and it produces not only a trained model but also the supporting data pipeline. @Lewis2021Challenges use this planning view to motivate co-architecting and co-versioning: the system side and the model-development side must be coordinated, and the deployed model must remain traceable to the data, parameters, and evaluation artifacts that produced it. In our adaptation, the added human lane makes explicit what fraud operations often leave implicit: expert review is not an afterthought but another component that must be designed and integrated from the beginning.
+The rest of @fig-planning-view also helps clarify why ML systems must be planned as products rather than isolated models[^coversioning]. The traditional component lane represents code, APIs, business logic, integrations, and interfaces. The ML lane represents model requirements, data engineering, model development, and quality assurance, and it produces not only a trained model but also the supporting data pipeline. @Lewis2021Challenges use this planning view to motivate co-architecting and co-versioning: the system side and the model-development side must be coordinated, and the deployed model must remain traceable to the data, parameters, and evaluation artifacts that produced it. In our adaptation, the added human lane makes explicit what fraud operations often leave implicit: expert review is not an afterthought but another component that must be designed and integrated from the beginning.
 
 [^coversioning]: **Co-versioning:** Data, features, models, evaluation artifacts, and policy thresholds should be traceable together so post-incident analysis can reconstruct the full decision state.
 
@@ -127,7 +127,7 @@ The first important transformation is from observation to score[^scorepolicy]. T
 
 ![Score-to-policy-to-action pipeline.](../../img/score_policy_action.png){#fig-score-policy-action}
 
-This separation is essential, it avoids the common but dangerous shortcut of treating the model score as if it were already a business decision [@Chen2022]. In operational settings, scores often need to be combined with guardrails, analyst saturation, time sensitivity, customer value, regional policy, and legal requirements [@Kaestner2025]. Those are policy concerns, not model parameters.
+This separation is essential, it avoids the common but dangerous shortcut of treating the model score as if it were already a business decision [@Chen2022]. In operational settings, scores often need to be combined with guardrails, analyst saturation, time sensitivity, customer value, regional policy, and legal requirements [@Ghadermazi2024; @Jalalvand2024; @Kaestner2025]. Those are policy concerns, not model parameters.
 
 Once score and policy are separated, the architecture can be stated more precisely[^l2d].
 
