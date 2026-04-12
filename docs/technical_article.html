@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="José P. Barrantes">
-<meta name="dcterms.date" content="2026-04-07">
+<meta name="dcterms.date" content="2026-04-11">
 
 <title>Designing fraud-prevention systems that keep analysts in the loop</title>
 <style>
@@ -4063,7 +4063,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 7, 2026</p>
+      <p class="date">April 11, 2026</p>
     </div>
   </div>
   
@@ -4085,7 +4085,7 @@ vertical-align: -.125em;
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The conference talk that accompanies this repository was intentionally concise. A short slot is useful for communicating the core intuition, but it cannot fully explain the broader software-architecture background, the design-pattern framing, the operational consequences, or the connections to MLOps and platform engineering. This article exists to fill that gap.</p>
 <p>The central thesis is straightforward: robust fraud-prevention systems are hybrid systems<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. They rarely succeed as purely manual workflows, because the volume of traffic and the speed of attack make full manual review infeasible. They also rarely succeed as purely automatic systems, because high-stakes decisions must account for ambiguity, changing attacker behavior, incomplete labels, asymmetric costs, and governance constraints. The most resilient architecture combines deterministic controls, statistical scoring, decision policy, and expert human judgment.</p>
-<p>That claim is not merely organizational. It is architectural<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Production machine-learning systems already require supporting software, data pipelines, monitoring, deployment structures, and cross-functional engineering practices <span class="citation" data-cites="Sculley2015 Amershi2019SE Lewis2021Challenges Nazir2024">(<a href="#ref-Amershi2019SE" role="doc-biblioref">Amershi, Begel, et al., 2019</a>; <a href="#ref-Lewis2021Challenges" role="doc-biblioref">Lewis, Ozkaya, et al., 2021</a>; <a href="#ref-Nazir2024" role="doc-biblioref">Nazir et al., 2024</a>; <a href="#ref-Sculley2015" role="doc-biblioref">Sculley et al., 2015</a>)</span>. In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not the model in isolation, but the socio-technical system in which model outputs, human judgment, workflow, and institutional decision-making interact to convert signals into action <span class="citation" data-cites="Dobbe2024 Salwei2022">(<a href="#ref-Dobbe2024" role="doc-biblioref">Dobbe &amp; Wolters, 2024</a>; <a href="#ref-Salwei2022" role="doc-biblioref">Salwei &amp; Carayon, 2022</a>)</span>.</p>
+<p>That claim is not merely organizational. It is architectural<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Production machine-learning systems already require supporting software, data pipelines, monitoring, deployment structures, and cross-functional engineering practices <span class="citation" data-cites="Sculley2015 Amershi2019SE Lewis2021Challenges Nazir2024">(<a href="#ref-Amershi2019SE" role="doc-biblioref">Amershi, Begel, et al., 2019</a>; <a href="#ref-Lewis2021Challenges" role="doc-biblioref">Lewis, Ozkaya, et al., 2021</a>; <a href="#ref-Nazir2024" role="doc-biblioref">Nazir et al., 2024</a>; <a href="#ref-Sculley2015" role="doc-biblioref">Sculley et al., 2015</a>)</span>. In fraud prevention, the surrounding system also includes analysts, decision queues, escalation paths, structured review outcomes, and operational feedback loops. The unit of design is therefore not a machine learning (ML) model in isolation, but the socio-technical system in which model outputs, human judgment, workflow, and institutional decision-making interact to convert signals into action <span class="citation" data-cites="Dobbe2024 Salwei2022">(<a href="#ref-Dobbe2024" role="doc-biblioref">Dobbe &amp; Wolters, 2024</a>; <a href="#ref-Salwei2022" role="doc-biblioref">Salwei &amp; Carayon, 2022</a>)</span>.</p>
 <div id="fig-three-pillars" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-three-pillars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
