@@ -142,7 +142,7 @@ This structure has several advantages. It respects the strengths of each compone
 
 ## Analysts are a runtime component, not a fallback afterthought
 
-A recurring weakness in ML system design is to treat human review as a vague fallback step[^analystcomp]. The pattern proposed here argues for the opposite. Analysts should be considered explicit runtime components of the architecture.
+A recurring weakness in ML system design is to treat human review as a vague fallback step rather than as an explicit runtime component of the system [@MosqueiraRey2023; @Ding2023; @Andersen2024][^analystcomp]. The pattern proposed here argues for the opposite. Analysts should be considered explicit runtime components of the architecture.
 
 [^analystcomp]: **Analyst as component:** Human review is not an exception handler. It is a designed workflow with structured inputs (ranked cases, reason codes) and structured outputs (decisions, feedback).
 
