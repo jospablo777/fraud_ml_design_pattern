@@ -39,7 +39,7 @@ Figure 1 is the shortest summary of the repository. It introduces the basic prop
 
 The systems literature repeatedly shows that a production model never lives alone (Sculley et al., 2015). It sits inside a larger environment of data collection, feature generation, serving, monitoring, operational tooling, and organizational constraints (Lewis, Ozkaya, & Xu, 2021; Kästner, 2025). For fraud operations, that picture is still incomplete unless expert human work is made visible as part of the production system itself.
 
-![Fig. 2. System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)](img/system_anatomy.png).
+![Fig. 2. System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)](img/system_anatomy.png)
 
 **Fig. 2.** System anatomy for fraud operations: the model lives inside a wider production environment made of data, software, infrastructure, monitoring, and expert human work. Adapted from Sculley et al. (2015)
 
