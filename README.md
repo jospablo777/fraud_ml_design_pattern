@@ -8,7 +8,7 @@ You can explore the material in three complementary formats:
 
 - [Technical article (web)](https://jospablo777.github.io/fraud_ml_design_pattern/technical_article.html)
 - [Technical article (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/communication/LaTeX/technical_article.pdf)
-- [Slides / presentation (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/Nerdearla-fraud_prevention_ML_and_architecture.pdf)
+- [Presentation deck (PDF)](https://github.com/jospablo777/fraud_ml_design_pattern/blob/main/Nerdearla-fraud_prevention_ML_and_architecture.pdf)
 
 In practice, robust fraud systems are neither purely manual nor purely automatic. They are hybrid socio-technical systems. Known cases can often be handled with deterministic controls. Repetitive and high-volume traffic benefits from machine-learning based prioritization. Ambiguous cases still require human judgment, contextual reading, and structured feedback. The architecture proposed here treats those capabilities as complementary parts of one system rather than as competing alternatives.
 
