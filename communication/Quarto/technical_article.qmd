@@ -140,7 +140,7 @@ Once score and policy are separated, the architecture can be stated more precise
 This structure has several advantages. It respects the strengths of each component, it separates inference from governance, and it creates a natural place to encode escalation logic. It also aligns well with the broader literature on learning to defer and selective intervention, where the goal is not merely to classify but to decide which cases should stay with the model and which should be routed to experts [@Alves2025].
 
 
-## Analysts are a runtime component, not a fallback afterthought
+## Analysts are a runtime component
 
 A recurring weakness in ML system design is to treat human review as a vague fallback step rather than as an explicit runtime component of the system [@MosqueiraRey2023; @Ding2023; @Andersen2024][^analystcomp]. The pattern proposed here argues for the opposite. Analysts should be considered explicit runtime components of the architecture.
 
