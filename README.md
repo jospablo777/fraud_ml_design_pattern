@@ -124,7 +124,7 @@ img/          All figures as PNG, plus editable GIMP sources in img/GIMP/
 Nerdearla-fraud_prevention_ML_and_architecture.pdf    Slide deck
 ```
 
-The `.xcf` sources are in the repo on purpose. Everything here is MIT licensed, so take the figures, edit them, and reuse them in your own decks and docs.
+The `.xcf` sources are in the repo on purpose, so the figures are editable rather than just viewable.
 
 ## Reading path
 
@@ -143,7 +143,11 @@ The article carries the full bibliography. These are the ones to read first.
 - Amershi, S., et al. (2019). *Guidelines for human-AI interaction*. **CHI 2019**. https://doi.org/10.1145/3290605.3300233 What the workbench owes the analyst.
 - Chen, C., et al. (2022). *Reliable machine learning: Applying SRE principles to ML in production*. O'Reilly. For the monitoring and reliability half of the story.
 
-## Citing this work
+## Using this material
+
+Take the figures, the diagrams, the pattern, whatever is useful. Adapt it to your own decks, docs, and systems. Make it yours! 😃
+
+No need to cite, but it would mean a lot if you did:
 
 > Barrantes, J. P. (2026). *Designing fraud-prevention systems that keep analysts in the loop*. Nerdearla Chile 2026. https://github.com/jospablo777/fraud_ml_design_pattern
 
